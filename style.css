@@ -1,0 +1,205 @@
+:root {
+  --azul-escuro: #0b3c78;
+  --azul-medio: #0b5fa5;
+  --azul-claro: #e7f1ff;
+  --cinza-claro: #f5f9ff;
+  --texto: #033a6d;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texto);
+  background: var(--cinza-claro);
+}
+
+header {
+  background: var(--azul-medio);
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('img/veiculo-na-estrada.jpg') center/cover no-repeat;
+  text-align: center;
+  color: white;
+  padding: 130px 40px;
+}
+
+/* ANIMAÇÃO DO ÍCONE HAMBÚRGUER */
+.mobile-menu-icon.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-icon.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-menu-icon .bar {
+  transition: 0.3s;
+}
+
+/* OVERLAY ESCURO AO ABRIR O MENU */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 8;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MENU GLASS EFFECT */
+.mobile-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(11, 95, 165, 0.85);
+  transition: transform 0.4s ease, opacity 0.3s;
+  opacity: 0;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+}
+
+.mobile-nav a {
+  transition: 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  opacity: 0.7;
+}
+
+.btn {
+  padding: 12px 26px;
+  background: var(--azul-medio);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover { background: var(--azul-escuro); }
+
+/* Cards responsivos – AGORA EM GRID */
+.secao {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.quem-somos {
+  padding: 60px 20px;
+  background-color: #93a4e0;
+}
+
+.quem-somos .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.quem-somos h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.quem-somos p {
+  line-height: 1.7;
+  font-size: 1.65rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* Extras */
+.secao-extra { padding: 70px 40px; text-align: center; }
+.logo-grid { display: flex; gap: 20px; justify-content: center; }
+.logo-item { background: white; padding: 30px; width: 120px; height: 60px; border-radius: 8px; }
+
+.case-grid, .team-grid { display: flex; gap: 25px; justify-content: center; }
+.case-card, .team-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Formulário */
+form {
+  max-width: 450px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .secao, .case-grid, .team-grid { flex-direction: column; }
+  header nav { display: none; }
+}
