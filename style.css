@@ -1,9 +1,13 @@
+/* ============================================================
+   VARIÁVEIS E BASE
+============================================================ */
 :root {
   --azul-escuro: #0b3c78;
   --azul-medio: #0b5fa5;
   --azul-claro: #e7f1ff;
   --cinza-claro: #f5f9ff;
   --texto: #033a6d;
+  --branco: #fff;
 }
 
 body {
@@ -11,179 +15,352 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   color: var(--texto);
   background: var(--cinza-claro);
+  padding-top: 130px;
+  line-height: 1.6;
 }
 
-header {
+/* ============================================================
+   HEADER SUPERIOR
+============================================================ */
+.top-header {
   background: var(--azul-medio);
-  color: white;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav a {
-  color: white;
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.hero {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url('img/veiculo-na-estrada.jpg') center/cover no-repeat;
-  text-align: center;
-  color: white;
-  padding: 130px 40px;
-}
-
-/* ANIMAÇÃO DO ÍCONE HAMBÚRGUER */
-.mobile-menu-icon.active .bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.mobile-menu-icon.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-menu-icon.active .bar:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-.mobile-menu-icon .bar {
-  transition: 0.3s;
-}
-
-/* OVERLAY ESCURO AO ABRIR O MENU */
-.mobile-overlay {
+  color: var(--branco);
+  width: 100%;
+  border-bottom: 1px solid #ffffff20;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 8;
+  z-index: 1000;
 }
 
-.mobile-overlay.active {
-  opacity: 1;
-  visibility: visible;
+.header-superior {
+  max-width: 1300px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
-/* MENU GLASS EFFECT */
-.mobile-nav {
-  backdrop-filter: blur(12px);
-  background: rgba(11, 95, 165, 0.85);
-  transition: transform 0.4s ease, opacity 0.3s;
-  opacity: 0;
+/* Redes sociais */
+.social-icons a {
+  color: var(--branco);
+  font-size: 16px;
+  margin-right: 12px;
+  border: 2px solid var(--branco);
+  padding: 6px 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  background: var(--branco);
+  color: var(--azul-medio);
 }
 
-.mobile-nav.open {
-  opacity: 1;
+/* Logo centralizada */
+.logo-area {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-.mobile-nav a {
-  transition: 0.2s ease;
-}
-
-.mobile-nav a:hover {
-  opacity: 0.7;
-}
-
-.btn {
-  padding: 12px 26px;
-  background: var(--azul-medio);
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
+.logo-img {
+  height: 70px;
   transition: 0.3s;
 }
 
-.btn:hover { background: var(--azul-escuro); }
-
-/* Cards responsivos – AGORA EM GRID */
-.secao {
-  padding: 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Botões */
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-btn i,
+.portal-btn {
+  border: 2px solid var(--branco);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: var(--branco);
+  transition: 0.3s;
+}
+.search-btn i:hover,
+.portal-btn:hover {
+  background: var(--branco);
+  color: var(--azul-medio);
 }
 
-.card {
-  flex: 1;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+/* ============================================================
+   MENU PRINCIPAL
+============================================================ */
+.menu-principal {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 15px 0;
+  font-weight: bold;
+}
+.menu-principal a {
+  color: var(--branco);
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+.menu-principal a:hover {
+  opacity: 0.75;
 }
 
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.card {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.quem-somos {
-  padding: 60px 20px;
-  background-color: #93a4e0;
-}
-
-.quem-somos .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.quem-somos h1 {
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("img/veiculo-na-estrada.jpg") center/cover no-repeat;
   text-align: center;
+  color: var(--branco);
+  padding: 150px 40px;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.2rem;
   margin-bottom: 25px;
 }
 
-.quem-somos p {
-  line-height: 1.7;
-  font-size: 1.65rem;
-  color: #333;
-  text-align: justify;
+/* Botão padrão */
+.btn {
+  padding: 12px 26px;
+  background: var(--azul-medio);
+  color: var(--branco);
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: var(--azul-escuro);
 }
 
-/* Extras */
-.secao-extra { padding: 70px 40px; text-align: center; }
-.logo-grid { display: flex; gap: 20px; justify-content: center; }
-.logo-item { background: white; padding: 30px; width: 120px; height: 60px; border-radius: 8px; }
+/* ============================================================
+   CARDS PRINCIPAIS
+============================================================ */
+.secao {
+  padding: 60px 20px;
+  max-width: 1300px;
+  margin: auto;
 
-.case-grid, .team-grid { display: flex; gap: 25px; justify-content: center; }
-.case-card, .team-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.card {
+  background: var(--branco);
+  padding: 35px 25px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(11, 95, 165, 0.06),
+    rgba(11, 95, 165, 0.15)
+  );
+}
+
+.card i {
+  font-size: 38px;
+  color: var(--azul-medio);
+  margin-bottom: 20px;
+}
+.card h3 {
+  font-size: 20px;
+  color: var(--azul-escuro);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.card p {
+  font-size: 15px;
+  color: #555;
+  flex-grow: 1;
+}
+.card a {
+  margin-top: 22px;
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: var(--azul-medio);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.card a:hover {
+  background: var(--azul-escuro);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1100px) {
+  .secao {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .secao {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   QUEM SOMOS
+============================================================ */
+.quem-somos {
+  padding: 80px 40px;
+  background: #b4c6e9;
+}
+.qs-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.qs-texto {
+  flex: 1;
+}
+.qs-texto h1 {
+  font-size: 42px;
+  color: #0057a3;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+.qs-texto p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #04345c;
+  margin-bottom: 30px;
+}
+.qs-botoes {
+  display: flex;
+  gap: 20px;
+}
+
+/* botões */
+.btn-outline,
+.btn-fill {
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-outline {
+  border: 2px solid #0057a3;
+  color: #0057a3;
+}
+.btn-outline:hover {
+  background: #0057a3;
+  color: white;
+}
+.btn-fill {
+  background: #0057a3;
+  color: white;
+}
+.btn-fill:hover {
+  background: #003c72;
+}
+
+/* imagem */
+.qs-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.qs-imagem img {
+  max-width: 420px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .qs-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .qs-botoes {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   SEÇÕES EXTRA
+============================================================ */
+.secao-extra {
+  padding: 70px 40px;
+  text-align: center;
+}
+.logo-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.logo-item {
+  background: white;
+  padding: 30px;
+  width: 120px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+/* cards de equipe/cases */
+.case-grid,
+.team-grid {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.case-card,
+.team-card {
   background: white;
   padding: 20px;
   border-radius: 10px;
   width: 280px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.team-card .foto {
+  width: 100%;
+  height: 160px;
+  background: #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
-/* Formulário */
+/* ============================================================
+   FORMULÁRIO
+============================================================ */
 form {
   max-width: 450px;
   margin: auto;
@@ -191,15 +368,49 @@ form {
   flex-direction: column;
   gap: 15px;
 }
-
-input, textarea {
+input,
+textarea {
   padding: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   FOOTER
+============================================================ */
+.rodape {
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 25px 20px;
+}
+.rodape-conteudo {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social-links a {
+  margin-left: 12px;
+  font-size: 20px;
+  color: var(--branco);
+  transition: 0.3s;
+}
+.social-links a:hover {
+  color: #d4e5ff;
+}
+
 @media (max-width: 900px) {
-  .secao, .case-grid, .team-grid { flex-direction: column; }
-  header nav { display: none; }
+  .logo-img {
+    height: 48px;
+  }
+  .menu-principal {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .rodape-conteudo {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
