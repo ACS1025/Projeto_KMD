@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "data": "2025-12-12",
+    "titulo": "BR-116 tem reforço de fiscalização para reduzir roubos de carga",
+    "subtitulo": "PRF amplia presença nas principais rotas de transporte de cargas.",
+    "imagem": "img/noticias/br116_fiscalizacao.jpg",
+    "conteudo": [
+      "A Polícia Rodoviária Federal intensificou ações de monitoramento ao longo da BR-116, uma das rodovias com maior índice de ocorrências envolvendo roubos de carga.",
+      "As operações contam com viaturas extras, drones, pontos de observação elevados e apoio de equipes especializadas, com foco em reduzir crimes e melhorar a segurança.",
+      "Empresas de transporte vêm sendo orientadas a reforçar os protocolos de gerenciamento de risco, especialmente durante viagens noturnas."
+    ]
+  },
+  {
+    "id": 2,
+    "data": "2025-12-10",
+    "titulo": "Novas diretrizes de gerenciamento de riscos entram em vigor",
+    "subtitulo": "Protocolos de segurança passam a ser obrigatórios em alguns segmentos.",
+    "imagem": "img/noticias/diretrizes_gr.jpg",
+    "conteudo": [
+      "Empresas de transporte agora devem adotar checklists digitais, rastreamento ativo e rotas inteligentes como medidas mínimas de segurança.",
+      "A medida visa padronizar boas práticas e reduzir incidentes, especialmente em corredores logísticos considerados críticos.",
+      "Auditorias poderão ser realizadas para verificar se empresas cumprem os novos requisitos."
+    ]
+  },
+  {
+    "id": 3,
+    "data": "2025-12-03",
+    "titulo": "Volume de cargas aumenta e eleva demanda por monitoramento 24h",
+    "subtitulo": "Setor logístico registra crescimento acima da média em 2025.",
+    "imagem": "img/noticias/monitoramento24h.jpg",
+    "conteudo": [
+      "O aumento do e-commerce intensificou a necessidade de monitoramento contínuo das viagens.",
+      "Empresas especializadas relatam crescimento na demanda por equipes 24/7, bem como por soluções avançadas de rastreamento.",
+      "O objetivo principal é reduzir atrasos, evitar riscos e aumentar a eficiência operacional."
+    ]
+  },
+  {
+    "id": 4,
+    "data": "2025-11-29",
+    "titulo": "Chuvas intensas causam interdições no Sul e Sudeste",
+    "subtitulo": "Rodovias registram quedas de barreira e pontos de alagamento.",
+    "imagem": "img/noticias/chuvas_interdicoes.jpg",
+    "conteudo": [
+      "Várias rodovias das regiões Sul e Sudeste registraram interdições parciais devido ao volume extremo de chuvas.",
+      "Equipes de monitoramento e concessionárias trabalham para liberar trechos críticos e orientar motoristas sobre rotas alternativas.",
+      "A recomendação é evitar viagens longas durante períodos de instabilidade climática."
+    ]
+  }
+]

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias – Sentinela GR</title>
+  <meta name="description" content="Notícias atualizadas sobre transporte rodoviário, segurança, logística e gerenciamento de riscos.">
+
+  <!-- FontAwesome + seu CSS principal -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Estilos adicionais -->
+  <style>
+    .noticias-wrapper { max-width: 1100px; margin: 120px auto 60px; padding: 0 20px; }
+    .noticias-wrapper h1 { font-size: 2rem; margin-bottom: 18px; color: var(--azul-escuro); }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 18px; }
+    .noticia-card { background: var(--branco); padding:16px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.06); transition:0.25s; border-left:6px solid var(--azul-medio); }
+    .noticia-card:hover{ transform:translateY(-6px); box-shadow:0 10px 22px rgba(0,0,0,0.12); }
+    .noticia-thumb{ width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
+    .noticia-data{ color:#666; font-size:0.9rem; margin-bottom:8px; display:flex; gap:8px; flex-wrap:wrap; }
+    .noticia-titulo{ margin:0 0 8px 0; font-size:1.15rem; color:var(--azul-escuro); }
+    .noticia-excerpt{ color:#444; line-height:1.6; margin:0; }
+    .card-actions{ margin-top:12px; display:flex; gap:8px; align-items:center; }
+    .btn-ler{ background:transparent; border:none; color:var(--azul-medio); font-weight:700; cursor:pointer; text-decoration:underline; padding:0; }
+
+    /* Modal */
+    .modal-overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:3000; padding:20px; }
+    .modal-overlay.show{ display:flex; animation:modalFade .28s ease both; }
+    @keyframes modalFade { from{ opacity:0; transform: translateY(6px);} to{ opacity:1; transform:none; } }
+
+    .modal-card{ width:100%; max-width:920px; background:var(--branco); border-radius:12px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.28); position:relative; }
+    .modal-thumb{ width:100%; height:340px; object-fit:cover; display:block; background:#e9eefb; }
+    .modal-body{ padding:20px 22px; }
+    .modal-meta{ color:#666; font-size:0.9rem; margin-bottom:8px; display:flex; gap:12px; flex-wrap:wrap; }
+    .modal-title{ margin:0 0 8px 0; font-size:1.6rem; color:var(--azul-escuro); }
+    .modal-subtitle{ margin:0 0 12px 0; color:var(--azul-medio); font-weight:600; }
+    .modal-content p{ margin:12px 0; line-height:1.7; color:#333; font-size:1rem; }
+
+    .modal-footer{ display:flex; justify-content:space-between; gap:12px; padding:14px 18px; background:var(--cinza-claro); border-top:1px solid #e6eefc; align-items:center; flex-wrap:wrap; }
+    .modal-nav{ display:flex; gap:8px; }
+    .nav-btn{ padding:8px 12px; border-radius:8px; background:var(--azul-medio); color:var(--branco); border:none; cursor:pointer; font-weight:700; }
+    .nav-btn:disabled{ opacity:0.45; cursor:not-allowed; }
+
+    .share-group{ display:flex; gap:8px; align-items:center; }
+    .share-btn{ display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:8px; color:#fff; text-decoration:none; font-weight:700; }
+    .share-whatsapp{ background:#25d366; }
+    .share-linkedin{ background:#0e76a8; }
+
+    .modal-close{ position:absolute; top:12px; right:14px; background:transparent; border:none; font-size:24px; cursor:pointer; color:var(--azul-escuro); }
+
+    @media (max-width:640px){
+      .modal-thumb{ height:220px; }
+      .noticias-wrapper{ margin-top:100px; }
+      .modal-title{ font-size:1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="top-header" role="banner">
+    <div class="header-superior">
+      <div class="social-icons" aria-label="Redes sociais">
+        <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:contato@sentinelagr.com"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div class="logo-area">
+        <a href="index.html"><img src="img/Logo_Kmd_Transp.png" alt="Komando - Logotipo" class="logo-img"></a>
+      </div>
+
+      <div class="right-actions">
+        <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+        <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener">PORTAL DO CLIENTE</a>
+      </div>
+    </div>
+
+    <nav class="menu-principal">
+      <a href="index.html">Início</a>
+      <a href="empresa.html">A Empresa</a>
+      <a href="riscos.html">Gestão de Riscos</a>
+      <a href="supply.html">Supply Chain</a>
+      <a href="projetos-especiais.html">Projetos</a>
+      <a href="clients.html">Clientes</a>
+      <a href="cases.html">Cases</a>
+      <a href="diferenciais.html">Diferenciais</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="noticias.html" class="ativo">Notícias</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <!-- LISTA -->
+  <main class="noticias-wrapper">
+    <h1>Últimas Notícias</h1>
+    <div id="newsGrid" class="news-grid"></div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <p>© 2025 — Sentinela GR. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-close">✕</button>
+      <img id="modalThumb" class="modal-thumb" src="img/default-news.jpg" alt="">
+      <div class="modal-body">
+        <div id="modalMeta" class="modal-meta"></div>
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <div id="modalSubtitle" class="modal-subtitle"></div>
+        <div id="modalContent" class="modal-content"></div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-nav">
+          <button id="prevBtn" class="nav-btn">← Anterior</button>
+          <button id="nextBtn" class="nav-btn">Próxima →</button>
+        </div>
+
+        <div class="share-group">
+          <a id="waShare" class="share-btn share-whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a id="liShare" class="share-btn share-linkedin" href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT FINAL 100% FUNCIONANDO -->
+  <script>
+    const NEWS = [
+      {
+        id: "20251212-br116-fiscalizacao",
+        data: "12/12/2025",
+        titulo: "BR-116 tem reforço de fiscalização para reduzir roubos de carga",
+        subtitulo: "Operação conjunta da PRF e órgãos estaduais",
+        local: "BR-116 — Trecho RJ / SP",
+        imagem: "img/br116-fiscalizacao.jpg",
+        conteudo: [
+          "A Polícia Rodoviária Federal intensificou ações de monitoramento ao longo da BR-116, uma das rotas com maior índice de ocorrências envolvendo veículos de carga.",
+          "As medidas incluem bloqueios móveis, revistas, viaturas com câmeras e apoio aéreo em trechos críticos.",
+          "Recomendação: se possível, adie passagens noturnas por trechos de maior risco."
+        ]
+      },
+      {
+        id: "20251210-diretrizes-gr",
+        data: "10/12/2025",
+        titulo: "Novas diretrizes de gerenciamento de riscos entram em vigor",
+        subtitulo: "Checklist digital e rotas inteligentes serão exigidos",
+        local: "Nacional",
+        imagem: "img/diretrizes-gr.jpg",
+        conteudo: [
+          "Empresas de transporte agora devem adotar protocolos mínimos de segurança, incluindo checklist digital, rotas inteligentes e rastreamento contínuo.",
+          "Auditorias poderão ser realizadas para verificar se empresas cumprem os novos requisitos."
+        ]
+      },
+      {
+        id: "20251203-volume-cargas",
+        data: "03/12/2025",
+        titulo: "Volume de cargas aumenta e eleva demanda por monitoramento 24h",
+        subtitulo: "Mercado pede serviços integrados de rastreamento",
+        local: "Setor logístico",
+        imagem: "img/monitoramento-24h.jpg",
+        conteudo: [
+          "O crescimento do e-commerce aumentou a procura por empresas especializadas em rastreamento e segurança.",
+          "Operações 24/7 tornaram-se essenciais para evitar atrasos e minimizar riscos."
+        ]
+      },
+      {
+        id: "20251129-chuvas-interdicoes",
+        data: "29/11/2025",
+        titulo: "Chuvas intensas causam interdições em rodovias do Sul e Sudeste",
+        subtitulo: "Quedas de barreira e alagamentos em pontos críticos",
+        local: "PR / SC / SP",
+        imagem: "img/chuvas-rodovia.jpg",
+        conteudo: [
+          "Vários trechos registraram interdições temporárias. Equipes trabalham na limpeza e liberação das pistas.",
+          "Motoristas devem reduzir velocidade e acompanhar atualizações oficiais."
+        ]
+      }
+    ];
+
+    function escapeHtml(s=''){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function stripTags(html=''){ return String(html).replace(/<[^>]*>/g,''); }
+
+    const grid = document.getElementById('newsGrid');
+
+    function renderList(){
+      grid.innerHTML = NEWS.map((n, idx) => `
+        <article class="noticia-card">
+          <img class="noticia-thumb" src="${n.imagem}">
+          <div>
+            <div class="noticia-data"><span>${escapeHtml(n.local)}</span> • <span>${escapeHtml(n.data)}</span></div>
+            <h3 class="noticia-titulo">${escapeHtml(n.titulo)}</h3>
+            <p class="noticia-excerpt">${escapeHtml(stripTags(n.conteudo.join(' '))).slice(0,190)}...</p>
+            <div class="card-actions"><button class="btn-ler" data-index="${idx}">Ler mais</button></div>
+          </div>
+        </article>
+      `).join('');
+
+      document.querySelectorAll('.btn-ler').forEach(b =>
+        b.addEventListener('click', e => abrirModal(Number(e.target.dataset.index)))
+      );
+    }
+
+    // MODAL
+    const overlay = document.getElementById('modalOverlay');
+    const modalThumb = document.getElementById('modalThumb');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalContent = document.getElementById('modalContent');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const closeBtn = document.getElementById('modalClose');
+    const waShare = document.getElementById('waShare');
+    const liShare = document.getElementById('liShare');
+
+    let current = -1;
+
+    function abrirModal(index){
+      const n = NEWS[index];
+      current = index;
+
+      modalThumb.src = n.imagem;
+      modalMeta.textContent = `${n.local} • ${n.data}`;
+      modalTitle.textContent = n.titulo;
+      modalSubtitle.textContent = n.subtitulo;
+      modalContent.innerHTML = n.conteudo.map(p => `<p>${p}</p>`).join('');
+
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === NEWS.length - 1;
+
+      const shareUrl = location.origin + location.pathname + `#news-${n.id}`;
+      waShare.href = `https://wa.me/?text=${encodeURIComponent(n.titulo + " — " + shareUrl)}`;
+      liShare.href = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(shareUrl)}`;
+
+      overlay.classList.add('show');
+      document.documentElement.style.overflow = 'hidden';
+      history.replaceState(null,'',`#news-${n.id}`);
+    }
+
+    function fecharModal(){
+      overlay.classList.remove('show');
+      document.documentElement.style.overflow = '';
+      history.replaceState(null,'',location.pathname);
+    }
+
+    prevBtn.addEventListener('click',()=> abrirModal(current-1));
+    nextBtn.addEventListener('click',()=> abrirModal(current+1));
+    closeBtn.addEventListener('click', fecharModal);
+    overlay.addEventListener('click', e => { if(e.target === overlay) fecharModal(); });
+
+    // 🔥 Navegação por teclado (FALTAVA ESSA PARTE)
+    document.addEventListener('keydown', (e) => {
+      if(!overlay.classList.contains('show')) return;
+
+      if(e.key === 'Escape') fecharModal();
+      if(e.key === 'ArrowLeft' && current>0) abrirModal(current-1);
+      if(e.key === 'ArrowRight' && current<NEWS.length-1) abrirModal(current+1);
+    });
+
+    // 🔥 Deep-link automático: abrir notícia direto pelo hash
+    window.addEventListener('load', () => {
+      const h = location.hash.replace('#news-', '');
+      if(!h) return;
+      const idx = NEWS.findIndex(n => n.id === h);
+      if(idx >= 0) {
+        setTimeout(()=> abrirModal(idx), 150);
+      }
+    });
+
+    renderList();
+  </script>
+
+</body>
+</html>
