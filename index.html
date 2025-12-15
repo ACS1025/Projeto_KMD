@@ -257,24 +257,14 @@
 
 <!-- CONTATO -->
 <section class="contato" id="contato">
-  <div class="contato-container">
-
-    <div class="contato-header">
-      <h2>Fale com a Komando</h2>
-      <p>Estamos prontos para entender sua operação e propor a melhor solução.</p>
-    </div>
-
-    <div class="contato-card">
-      <form id="formContato">
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="E-mail" required>
-        <input type="text" placeholder="Empresa">
-        <textarea placeholder="Mensagem" required></textarea>
-        <button type="submit" class="btn">Enviar mensagem</button>
-      </form>
-    </div>
-
-  </div>
+  <h1>Entre em Contato</h1>
+  <form id="formContato" action="/enviar-contato" method="POST">
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="empresa" placeholder="Empresa" required>
+    <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+    <button type="submit" class="btn">Enviar</button>
+  </form>
 </section>
 
 
@@ -292,5 +282,10 @@
 </footer>
 
 <script src="script.js" defer></script>
+<!-- Botão flutuante do WhatsApp -->
+<a href="https://wa.me/5519981260767" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
 </html>

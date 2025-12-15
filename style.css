@@ -514,8 +514,9 @@ textarea {
 }
 /* CONTATO */
 .contato {
-  padding: 80px 20px;
-  background: #b7d2f2; /* neutro, elegante */
+  padding: 60px 40px;
+  background-color: #cbe0f2;
+  text-align: center;
 }
 
 .contato-container {
@@ -542,6 +543,37 @@ textarea {
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
+#formContato {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+input, textarea {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+button[type="submit"] {
+  background-color: #0b5fa5;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0b3c78;
+}
 
 .bloco--claro {
   background: #ffffff;
@@ -560,3 +592,46 @@ textarea {
   );
 }
 
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  padding: 25px;
+  border-radius: 25%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-btn i {
+  font-size: 22px;
+}
+
+.section {
+  padding: 60px 40px;
+  background: linear-gradient(to bottom, #e7f1ff, #cfe4ff);
+}
+
+.section--clientes {
+  background: linear-gradient(to bottom, #cfe4ff, #b0d4f1);
+}
+
+.section--cases {
+  background: linear-gradient(to bottom, #b0d4f1, #a1c0e1);
+}
+
+.section--diferenciais {
+  background: linear-gradient(to bottom, #a1c0e1, #92adc1);
+}
+
+.section--equipe {
+  background: linear-gradient(to bottom, #92adc1, #7e99b0);
+}
