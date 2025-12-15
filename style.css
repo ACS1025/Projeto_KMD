@@ -305,16 +305,18 @@ body {
 
 /* Imagem */
 .qs-imagem {
-  display: block !important;
-  width: 50% !important;
-  min-height: 300px !important;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .qs-imagem img {
-  display: block !important;
-  max-width: 100% !important;
-  height: auto !important;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
+
 
 
 /* Responsivo Quem Somos */
