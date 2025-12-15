@@ -477,3 +477,86 @@ textarea {
     opacity: 1;
   }
 }
+/* ============================================================
+   SEÇÕES PADRÃO (REUTILIZÁVEL)
+============================================================ */
+.section {
+  padding: 80px 40px;
+  background: var(--cinza-claro);
+}
+
+.section-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: #555;
+  max-width: 720px;
+  margin: auto;
+}
+
+.section-content {
+  display: block;
+}
+/* CONTATO */
+.contato {
+  padding: 80px 20px;
+  background: #b7d2f2; /* neutro, elegante */
+}
+
+.contato-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.contato-header h2 {
+  font-size: 32px;
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+}
+
+.contato-header p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+.contato-card {
+  background: #acbff1;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.bloco--claro {
+  background: #ffffff;
+}
+
+.bloco--suave {
+  background: #f2f6fb;
+}
+
+/* opcional: transição quase invisível */
+.bloco--suave + .bloco--claro {
+  background: linear-gradient(
+    180deg,
+    #f2f6fb 0%,
+    #ffffff 100%
+  );
+}
+

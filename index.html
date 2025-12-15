@@ -22,12 +22,12 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
   <!-- FONT AWESOME (com carregamento rápido) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
-  <!-- CSS PRINCIPAL (minificado preferencialmente) -->
+  <!-- CSS PRINCIPAL -->
   <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
 
 <header class="top-header">
@@ -63,7 +63,9 @@
 
     <!-- Ações -->
     <div class="right-actions">
-      <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="#" class="search-btn" aria-label="Buscar">
+        <i class="fas fa-search"></i>
+      </a>
 
       <a href="http://vstrack.ddns.net/komando/"
          class="portal-btn"
@@ -77,15 +79,15 @@
 
   <!-- MENU PRINCIPAL -->
   <nav class="menu-principal" role="navigation" aria-label="Menu principal">
-        <a href="empresa.html">A Empresa</a>
-        <a href="riscos.html">Gestão de Riscos</a>
-        <a href="supply.html">Supply Chain</a>
-        <a href="projetos-especiais.html">Projetos</a>
-        <a href="clients.html">Clientes</a>
-        <a href="cases.html">Cases</a>
-        <a href="diferenciais.html">Diferenciais</a>
-        <a href="equipe.html">Equipe</a>
-        <a href="contato.html">Contato</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
   </nav>
 </header>
 
@@ -102,9 +104,8 @@
 </section>
 
 <!-- CARDS PRINCIPAIS -->
-
-
 <section class="secao cards-home" id="riscos">
+
   <a href="riscos.html" class="card-link">
     <div class="card">
       <h2>Gerenciamento de Riscos</h2>
@@ -133,14 +134,12 @@
     </div>
   </a>
 
-
 </section>
 
 <!-- QUEM SOMOS -->
 <section class="quem-somos" id="empresa">
   <div class="qs-container">
-    
-    <!-- Coluna de texto -->
+
     <div class="qs-texto">
       <h1>QUEM SOMOS</h1>
       <p>
@@ -157,7 +156,6 @@
       </div>
     </div>
 
-    <!-- Coluna da imagem -->
     <div class="qs-imagem">
       <img src="img/men_kmd.svg" alt="Equipe Komando">
     </div>
@@ -165,62 +163,120 @@
   </div>
 </section>
 
-
 <!-- CLIENTES -->
-<section class="secao-extra" id="clientes">
+ <section class="secao-extra bloco bloco--claro" id="clientes">
+
   <h1>Clientes</h1>
   <p>Empresas que confiam na Komando GR.</p>
 
-  <div class="logo-grid">
-    <div class="logo-item">LOGO</div>
-    <div class="logo-item">LOGO</div>
-    <div class="logo-item">LOGO</div>
-    <div class="logo-item">LOGO</div>
+  <div class="secao card-grid">
+    <div class="card card--logo">LOGO</div>
+    <div class="card card--logo">LOGO</div>
+    <div class="card card--logo">LOGO</div>
+    <div class="card card--logo">LOGO</div>
   </div>
 </section>
+
 
 <!-- CASES -->
-<section class="secao-extra" id="cases">
+<section class="secao-extra bloco bloco--suave" id="cases">
   <h1>Cases de Sucesso</h1>
-  <div class="case-grid">
-    <div class="case-card"><h3>Case 1</h3><p>Resultados obtidos…</p></div>
-    <div class="case-card"><h3>Case 2</h3><p>Estratégias aplicadas…</p></div>
-    <div class="case-card"><h3>Case 3</h3><p>Impacto para o cliente…</p></div>
+
+  <div class="secao card-grid">
+    <div class="card">
+      <h3>Case 1</h3>
+      <p>Resultados obtidos…</p>
+    </div>
+
+    <div class="card">
+      <h3>Case 2</h3>
+      <p>Estratégias aplicadas…</p>
+    </div>
+
+    <div class="card">
+      <h3>Case 3</h3>
+      <p>Impacto para o cliente…</p>
+    </div>
   </div>
 </section>
+
 
 <!-- DIFERENCIAIS -->
-<section class="secao-extra" id="diferenciais">
+<section class="secao-extra bloco bloco--claro" id="diferenciais"
   <h1>Diferenciais</h1>
-  <ul class="dif-lista">
-    <li>Monitoramento 24/7</li>
-    <li>Análise de risco baseada em dados</li>
-    <li>Atendimento ágil e especializado</li>
-    <li>Tecnologia própria</li>
-  </ul>
-</section>
 
-<!-- EQUIPE -->
-<section class="secao-extra" id="equipe">
-  <h1>Equipe</h1>
-  <div class="team-grid">
-    <div class="team-card"><div class="foto"></div><h3>Silva</h3><p>Diretora Operacional</p></div>
-    <div class="team-card"><div class="foto"></div><h3>Marcos Torres</h3><p>Especialista em Riscos</p></div>
-    <div class="team-card"><div class="foto"></div><h3>Juliana Ramos</h3><p>Coordenadora de Monitoramento</p></div>
+  <div class="secao card-grid">
+    <div class="card">
+      <h3>Monitoramento 24/7</h3>
+      <p>Atuação contínua e preventiva.</p>
+    </div>
+
+    <div class="card">
+      <h3>Análise de risco baseada em dados</h3>
+      <p>Decisões orientadas por inteligência.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atendimento ágil e especializado</h3>
+      <p>Equipe técnica dedicada.</p>
+    </div>
+
+    <div class="card">
+      <h3>Tecnologia própria</h3>
+      <p>Soluções desenvolvidas internamente.</p>
+    </div>
   </div>
 </section>
+
+
+<!-- EQUIPE -->
+<section class="secao-extra bloco bloco--suave" id="equipe">
+  <h1>Equipe</h1>
+
+  <div class="secao card-grid">
+    <div class="card card--team">
+      <div class="foto"></div>
+      <h3>Silva</h3>
+      <p>Diretora Operacional</p>
+    </div>
+
+    <div class="card card--team">
+      <div class="foto"></div>
+      <h3>Marcos Torres</h3>
+      <p>Especialista em Riscos</p>
+    </div>
+
+    <div class="card card--team">
+      <div class="foto"></div>
+      <h3>Juliana Ramos</h3>
+      <p>Coordenadora de Monitoramento</p>
+    </div>
+  </div>
+</section>
+
 
 <!-- CONTATO -->
 <section class="contato" id="contato">
-  <h1>Contato</h1>
-  <form id="formContato">
-    <input type="text" placeholder="Nome" required>
-    <input type="email" placeholder="E-mail" required>
-    <input type="text" placeholder="Empresa">
-    <textarea placeholder="Mensagem" required></textarea>
-    <button type="submit" class="btn">Enviar</button>
-  </form>
+  <div class="contato-container">
+
+    <div class="contato-header">
+      <h2>Fale com a Komando</h2>
+      <p>Estamos prontos para entender sua operação e propor a melhor solução.</p>
+    </div>
+
+    <div class="contato-card">
+      <form id="formContato">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="text" placeholder="Empresa">
+        <textarea placeholder="Mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar mensagem</button>
+      </form>
+    </div>
+
+  </div>
 </section>
+
 
 <!-- RODAPÉ -->
 <footer class="rodape">
@@ -228,22 +284,13 @@
     <p>© 2025 — Komando GR. Todos os direitos reservados.</p>
 
     <div class="social-links">
-  <a href="https://www.linkedin.com/company/komando/" aria-label="LinkedIn" target="_blank">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-</div>
-
+      <a href="https://www.linkedin.com/company/komando/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
   </div>
 </footer>
 
-<!-- SCRIPTS -->
 <script src="script.js" defer></script>
-
 </body>
 </html>
