@@ -619,10 +619,17 @@ button[type="submit"]:hover {
   padding: 60px 40px;
   background: linear-gradient(to bottom, #e7f1ff, #cfe4ff);
 }
-
 .section--clientes {
-  background: linear-gradient(to bottom, #cfe4ff, #b0d4f1);
+  position: relative;
+  background:
+    linear-gradient(
+      rgba(11, 60, 120, 0.78),
+      rgba(11, 60, 120, 0.88)
+    ),
+    url("img/bg-clientes.svg") center bottom / cover no-repeat,
+    linear-gradient(to bottom, #c9daf1, #e1edf6);
 }
+
 
 .section--cases {
   background: linear-gradient(to bottom, #b0d4f1, #a1c0e1);
