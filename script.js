@@ -114,3 +114,25 @@ document.addEventListener("keydown", (e) => {
     openModal(currentIndex - 1);
   }
 });
+// CENTRAL DE ATENDIMENTO
+const btnAtendimento = document.getElementById("btnAtendimento");
+const modalAtendimento = document.getElementById("modalAtendimento");
+const fecharAtendimento = document.getElementById("fecharAtendimento");
+
+btnAtendimento.addEventListener("click", () => {
+  modalAtendimento.classList.add("show");
+  modalAtendimento.setAttribute("aria-hidden", "false");
+});
+
+fecharAtendimento.addEventListener("click", () => {
+  modalAtendimento.classList.remove("show");
+  modalAtendimento.setAttribute("aria-hidden", "true");
+});
+
+// Fecha ao clicar fora
+modalAtendimento.addEventListener("click", (e) => {
+  if (e.target === modalAtendimento) {
+    modalAtendimento.classList.remove("show");
+    modalAtendimento.setAttribute("aria-hidden", "true");
+  }
+});

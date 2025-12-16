@@ -267,6 +267,66 @@
   </form>
 </section>
 
+<!-- BOTÃO FLUTUANTE – CENTRAL DE ATENDIMENTO -->
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento">
+  <i class="fas fa-headset"></i>
+</button>
+
+<!-- CHAT – CENTRAL DE ATENDIMENTO -->
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
+
+  <div class="kmd-chat-header">
+    <div class="kmd-chat-title">
+      <i class="fas fa-headset"></i>
+      <div>
+        <strong>Central de Atendimento</strong>
+        <span class="kmd-status">Estamos online</span>
+      </div>
+    </div>
+
+    <button class="kmd-chat-close" id="kmdChatClose" aria-label="Fechar">×</button>
+  </div>
+
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble">
+      <p><strong>Olá 👋</strong></p>
+      <p>Como podemos ajudar você hoje?</p>
+    </div>
+
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767?text=Olá,%20gostaria%20de%20falar%20com%20Vendas"
+         target="_blank" class="kmd-action">
+        <i class="fas fa-chart-line"></i>
+        Falar com Vendas
+      </a>
+
+      <a href="https://wa.me/5519981260767?text=Olá,%20preciso%20de%20Suporte%20ao%20Motorista"
+         target="_blank" class="kmd-action">
+        <i class="fas fa-truck"></i>
+        Suporte ao Motorista
+      </a>
+
+      <a href="https://wa.me/5519981260767?text=Olá,%20preciso%20de%20Suporte%20ao%20Cliente"
+         target="_blank" class="kmd-action">
+        <i class="fas fa-user-shield"></i>
+        Suporte ao Cliente
+      </a>
+
+      <a href="mailto:rh@komandogr.com" class="kmd-action">
+        <i class="fas fa-briefcase"></i>
+        Trabalhe Conosco
+      </a>
+    </div>
+  </div>
+
+  <div class="kmd-chat-footer">
+    Ao continuar, você concorda com nossa
+    <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a>
+  </div>
+
+</div>
+
+
 
 <!-- RODAPÉ -->
 <footer class="rodape">
@@ -286,6 +346,14 @@
 <a href="https://wa.me/5519981260767" target="_blank" class="whatsapp-btn">
     <i class="fab fa-whatsapp"></i>
 </a>
+<script>
+  const toggle = document.getElementById('kmdChatToggle');
+  const chat = document.getElementById('kmdChat');
+  const close = document.getElementById('kmdChatClose');
+
+  toggle.onclick = () => chat.classList.toggle('show');
+  close.onclick = () => chat.classList.remove('show');
+</script>
 
 </body>
 </html>

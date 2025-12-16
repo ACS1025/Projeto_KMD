@@ -595,12 +595,12 @@ button[type="submit"]:hover {
 
 .whatsapp-btn {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   background-color: #25d366;
   color: white;
-  padding: 25px;
-  border-radius: 25%;
+  padding: 20px;
+  border-radius: 20%;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   font-size: 24px;
   transition: 0.3s;
@@ -634,4 +634,137 @@ button[type="submit"]:hover {
 
 .section--equipe {
   background: linear-gradient(to bottom, #92adc1, #7e99b0);
+}
+/* ============================================================
+   KMD CHAT – CENTRAL DE ATENDIMENTO (estilo BRK)
+============================================================ */
+
+.kmd-chat-toggle {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 56px;
+  height: 56px;
+  background: #0b5fa5;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.kmd-chat {
+  position: fixed;
+  bottom: 160px;
+  right: 25px;
+  width: 340px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1200;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.kmd-chat.show {
+  display: flex;
+}
+
+/* HEADER */
+.kmd-chat-header {
+  background: #0b5fa5;
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kmd-chat-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.kmd-chat-title i {
+  font-size: 20px;
+}
+
+.kmd-chat-title strong {
+  display: block;
+  font-size: 15px;
+}
+
+.kmd-status {
+  font-size: 12px;
+  color: #c7f3d2;
+}
+
+.kmd-chat-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* BODY */
+.kmd-chat-body {
+  padding: 16px;
+  background: #f4f7fb;
+}
+
+.kmd-bubble {
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ACTIONS */
+.kmd-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kmd-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e6ef;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #033a6d;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.kmd-action:hover {
+  background: #e7f1ff;
+  border-color: #0b5fa5;
+}
+
+/* FOOTER */
+.kmd-chat-footer {
+  padding: 10px 14px;
+  font-size: 11px;
+  background: #ffffff;
+  color: #666;
+  text-align: center;
+}
+
+.kmd-chat-footer a {
+  color: #0b5fa5;
+  text-decoration: none;
+  font-weight: 600;
 }
