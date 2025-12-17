@@ -1,56 +1,117 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>KMD • Projetos Especiais</title>
+  <!-- SEO BÁSICO -->
 
-    <meta name="description" content="Projetos especiais personalizados: investigações corporativas, operações de inteligência, auditorias, consultoria estratégica e soluções sob medida.">
+  <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
+  <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+  <!-- SEO SOCIAL (OPEN GRAPH) -->
+
+  <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
+  <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
+  <meta property="og:image" content="img/og-banner.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- FAVICON -->
+
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+
+  <!-- PERFORMANCE -->
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- CSS PRINCIPAL -->
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="top-header">
-    <div class="header-superior">
+  <div class="header-superior">
 
-        <!-- Redes sociais -->
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
 
-        <!-- Logo -->
-        <div class="logo-area">
-            <img src="img/veiculo-na-estrada.jpg" alt="Logo KMD" class="logo-img" />
-        </div>
+<div class="social-icons" aria-label="Redes sociais">
+  <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+</div>
 
-        <!-- Portal -->
-        <div class="right-actions">
-            <a class="portal-btn" href="#">Portal do Cliente</a>
-        </div>
+<div class="logo-area">
+  <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
+</div>
 
-    </div>
+<div class="right-actions">
+  <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+  <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
+</div>
 
-    <!-- Menu principal -->
-    <nav class="menu-principal">
-        <a href="empresa.html">A Empresa</a>
-        <a href="riscos.html">Gestão de Riscos</a>
-        <a href="supply.html">Supply Chain</a>
-        <a href="projetos-especiais.html" class="ativo">Projetos</a>
-        <a href="clients.html">Clientes</a>
-        <a href="cases.html">Cases</a>
-        <a href="diferenciais.html">Diferenciais</a>
-        <a href="equipe.html">Equipe</a>
-        <a href="contato.html">Contato</a>
-    </nav>
+  </div>
+
+  <nav class="menu-principal" aria-label="Menu principal">
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
+  </nav>
 </header>
+<style>
+/* ==================================================
+   ESTILO EXCLUSIVO — PÁGINA PROJETOS ESPECIAIS
+   NÃO AFETA OUTRAS PÁGINAS
+================================================== */
 
+.pagina-projetos-especiais .secao {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+/* Cards somente desta página */
+.pagina-projetos-especiais .secao .card {
+  width: calc(25% - 24px);
+  min-height: 340px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .pagina-projetos-especiais .secao .card {
+    width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 640px) {
+  .pagina-projetos-especiais .secao .card {
+    width: 100%;
+  }
+}
+</style>
+
+<body class="pagina-projetos-especiais">
 <!-- HERO -->
 <section class="hero" style="padding: 100px 40px;">
     <h1>Projetos Especiais</h1>
@@ -87,17 +148,40 @@
 
 </section>
 
-<!-- RODAPÉ -->
-<footer class="rodape">
-    <div class="rodape-conteudo">
-        <p>© 2025 KMD – Todos os direitos reservados</p>
-        <div class="social-links">
-            <a href="#">FB</a>
-            <a href="#">IG</a>
-            <a href="#">IN</a>
-        </div>
+<!-- BOTÃO DO CHAT  -->   
+    <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
+  <div class="kmd-chat-header">
+    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
+    <button class="kmd-chat-close" id="kmdChatClose">×</button>
+  </div>
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
+      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
+  </div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+</div>
+
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <p>© 2025 — Komando GR. Todos os direitos reservados.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/komando/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
 </footer>
+
+<script src="script.js" defer></script>
+
+<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
 
 </body>
 </html>

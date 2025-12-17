@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>Clientes – Sentinela GR</title>
-  <meta name="description" content="Conheça as empresas que confiam na Sentinela GR para segurança logística, monitoramento e gestão de riscos em operações por todo o Brasil.">
+  <!-- SEO BÁSICO -->
+  <title>Clientes | Komando GR</title>
+  <meta name="description" content="Empresas que confiam na Komando GR para gestão de riscos, monitoramento e segurança logística em todo o Brasil.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Clientes – Sentinela GR" />
-  <meta property="og:description" content="Empresas que confiam na Sentinela GR." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/og-clientes.jpg" />
+  <!-- SEO SOCIAL -->
+  <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
+  <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
+  <meta property="og:image" content="img/og-banner.jpg">
+  <meta property="og:type" content="website">
 
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+
+  <!-- PERFORMANCE -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+  <!-- CSS PRINCIPAL -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="pagina-clientes">
 
-<!-- HEADER -->
 <header class="top-header">
   <div class="header-superior">
 
-    <!-- Redes -->
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:contato@sentinelagr.com"><i class="fas fa-envelope"></i></a>
+    <!-- Redes sociais -->
+    <div class="social-icons" aria-label="Redes sociais">
+      <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
     </div>
 
     <!-- Logo -->
     <div class="logo-area">
-      <a href="index.html">
-        <img src="logo.png" alt="Sentinela GR" class="logo-img" loading="lazy">
-      </a>
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
     </div>
 
-    <!-- Portal -->
+    <!-- Ações -->
     <div class="right-actions">
-      <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-      <a href="http://vstrack.ddns.net/komando/"
-         class="portal-btn"
-         target="_blank"
-         rel="noopener noreferrer">PORTAL DO CLIENTE</a>
+      <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
+        PORTAL DO CLIENTE
+      </a>
     </div>
 
   </div>
 
-  <nav class="menu-principal">
+  <nav class="menu-principal" aria-label="Menu principal">
+    <a href="index.html">Início</a>
     <a href="empresa.html">A Empresa</a>
-    <a href="gerenciamento-de-riscos.html">Gestão de Riscos</a>
-    <a href="supply-chain.html">Supply Chain</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
     <a href="projetos-especiais.html">Projetos</a>
     <a href="clients.html" class="ativo">Clientes</a>
     <a href="cases.html">Cases</a>
@@ -63,18 +74,134 @@
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" style="background-image: url('img/clientes-hero.jpg');">
+<style>
+/* ==================================================
+   ESTILO EXCLUSIVO — PÁGINA CLIENTES
+================================================== */
+
+.pagina-clientes .pagina-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.pagina-clientes .pagina-conteudo h2 {
+  font-size: 2rem;
+  color: var(--azul-escuro, #0b3c78);
+  margin-bottom: 16px;
+}
+
+.pagina-clientes .pagina-conteudo p {
+  max-width: 900px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  color: #444;
+}
+
+/* GRID DE LOGOS */
+.pagina-clientes .logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  margin: 40px 0 80px;
+}
+
+.pagina-clientes .logo-item {
+  height: 120px;
+  background: #f7f9fc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #777;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.pagina-clientes .logo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.08);
+}
+
+/* DEPOIMENTOS */
+.pagina-clientes .depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.pagina-clientes .depoimento-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.pagina-clientes .depoimento-card p {
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.pagina-clientes .depoimento-card strong {
+  color: var(--azul-escuro, #0b3c78);
+}
+
+/* CTA */
+.pagina-clientes .cta-centro {
+  margin-top: 80px;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 640px) {
+  .pagina-clientes .pagina-conteudo {
+    padding: 60px 24px;
+  }
+}
+
+/* HERO — página Clientes */
+.pagina-clientes .hero {
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #fff;
+  padding: 60px 20px;
+}
+
+/* escurece a imagem para leitura do texto */
+.pagina-clientes .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.pagina-clientes .hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+</style>
+
+<!-- HERO (corrigido: agora tem altura) -->
+<section class="hero"
+         style="background-image:url('img/veiculo-na-estrada.jpg'); padding:100px 40px;">
   <h1>Clientes</h1>
-  <p>Empresas que confiam na Sentinela GR.</p>
+  <p>Empresas que confiam na Komando GR.</p>
 </section>
 
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <a href="index.html">Home</a> → <span>Clientes</span>
-</div>
 
-<!-- CONTEÚDO PRINCIPAL -->
+<!-- CONTEÚDO -->
 <section class="pagina-conteudo">
 
   <h2>Parcerias que criam resultados</h2>
@@ -83,8 +210,7 @@
     movimentam cargas estratégicas diariamente. Nossa atuação cobre operações no Brasil e Mercosul.
   </p>
 
-  <!-- GRID DE LOGOS -->
-  <div class="logo-grid grande">
+  <div class="logo-grid">
     <div class="logo-item">LOGO 1</div>
     <div class="logo-item">LOGO 2</div>
     <div class="logo-item">LOGO 3</div>
@@ -95,10 +221,9 @@
     <div class="logo-item">LOGO 8</div>
   </div>
 
-  <h2 style="margin-top:60px;">Depoimentos</h2>
+  <h2>Depoimentos</h2>
 
   <div class="depoimentos-grid">
-
     <div class="depoimento-card">
       <p>"Reduzimos drasticamente incidentes nas rotas mais críticas."</p>
       <strong>— Transportadora Horizonte</strong>
@@ -110,10 +235,9 @@
     </div>
 
     <div class="depoimento-card">
-      <p>"A Sentinela trouxe previsibilidade e confiança ao nosso supply chain."</p>
+      <p>"A Komando trouxe previsibilidade e confiança ao nosso supply chain."</p>
       <strong>— Indústria Vale Forte</strong>
     </div>
-
   </div>
 
   <div class="cta-centro">
@@ -122,10 +246,30 @@
 
 </section>
 
-<!-- RODAPÉ -->
+<!-- CHAT -->
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento">
+  <i class="fas fa-headset"></i>
+</button>
+
+<div class="kmd-chat" id="kmdChat">
+  <div class="kmd-chat-header">
+    <strong>Central de Atendimento</strong>
+    <button id="kmdChatClose">×</button>
+  </div>
+</div>
+
 <footer class="rodape">
-  <p>© 2025 — Sentinela GR. Todos os direitos reservados.</p>
+  <p>© 2025 — Komando GR. Todos os direitos reservados.</p>
 </footer>
+
+<script src="script.js" defer></script>
+<script>
+  const toggle = document.getElementById('kmdChatToggle');
+  const chat = document.getElementById('kmdChat');
+  const close = document.getElementById('kmdChatClose');
+  toggle.onclick = () => chat.classList.toggle('show');
+  close.onclick = () => chat.classList.remove('show');
+</script>
 
 </body>
 </html>
