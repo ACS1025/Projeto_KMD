@@ -33,7 +33,6 @@ document.querySelectorAll("#mobileNav a").forEach(link => {
 
 /* ==================================================
    MODAL GLOBAL — PADRÃO DO SITE INTEIRO
-   (Empresa / Notícias / Cases / Projetos / Diferenciais)
 ================================================== */
 const modal = document.getElementById("cardModal");
 const modalTitle = document.getElementById("modalTitle");
@@ -77,17 +76,13 @@ function closeModal() {
 /* ---------- TRIGGERS (CARDS) ---------- */
 document.querySelectorAll(".modal-trigger, .btn-saiba-mais").forEach(trigger => {
   trigger.addEventListener("click", () => {
-
     const card = trigger.closest(".card");
     if (!card) return;
 
     const section = card.closest(".secao");
     if (!section) return;
 
-    currentGroup = Array.from(
-      section.querySelectorAll(".card")
-    );
-
+    currentGroup = Array.from(section.querySelectorAll(".card"));
     openModal(currentGroup.indexOf(card));
   });
 });
@@ -114,25 +109,40 @@ document.addEventListener("keydown", (e) => {
     openModal(currentIndex - 1);
   }
 });
-// CENTRAL DE ATENDIMENTO
+
+/* ==================================================
+   CENTRAL DE ATENDIMENTO
+================================================== */
 const btnAtendimento = document.getElementById("btnAtendimento");
 const modalAtendimento = document.getElementById("modalAtendimento");
 const fecharAtendimento = document.getElementById("fecharAtendimento");
 
-btnAtendimento.addEventListener("click", () => {
+btnAtendimento?.addEventListener("click", () => {
   modalAtendimento.classList.add("show");
   modalAtendimento.setAttribute("aria-hidden", "false");
 });
 
-fecharAtendimento.addEventListener("click", () => {
+fecharAtendimento?.addEventListener("click", () => {
   modalAtendimento.classList.remove("show");
   modalAtendimento.setAttribute("aria-hidden", "true");
 });
 
-// Fecha ao clicar fora
-modalAtendimento.addEventListener("click", (e) => {
+modalAtendimento?.addEventListener("click", (e) => {
   if (e.target === modalAtendimento) {
     modalAtendimento.classList.remove("show");
     modalAtendimento.setAttribute("aria-hidden", "true");
   }
 });
+
+/* ==================================================
+   MENU MOBILE ALTERNATIVO (mantido, só formatado)
+================================================== */
+const btn = document.getElementById("mobileMenuBtn");
+const menuMobile = document.getElementById("menuMobile");
+
+if (btn && menuMobile) {
+  btn.addEventListener("click", () => {
+    menuMobile.classList.toggle("active");
+    btn.classList.toggle("active");
+  });
+}

@@ -133,15 +133,20 @@ body {
   padding: 150px 40px;
 }
 
+
 .hero h1 {
   font-size: 2.6rem;
   font-weight: 700;
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+.hero {
+  color: #ffffff;
 }
+
+.hero h1,
+.hero p {
+  color: #ffffff;
+}
+
 
 /* Botão padrão */
 .btn {
@@ -234,6 +239,13 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 1024px) {
+  .menu-principal {
+    display: none;
+  }
+}
+
 
 /* ============================================================
    QUEM SOMOS
@@ -619,20 +631,100 @@ button[type="submit"]:hover {
   padding: 60px 40px;
   background: linear-gradient(to bottom, #e7f1ff, #cfe4ff);
 }
+/* ==============================
+   CLIENTES – CARROSSEL
+================================ */
+
 .section--clientes {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #d0d7e2, #abd6f6);
+}
+
+.clientes-carousel-wrapper {
   position: relative;
-  background:
-    linear-gradient(
-      rgba(11, 60, 120, 0.78),
-      rgba(11, 60, 120, 0.88)
-    ),
-    url("img/bg-clientes.svg") center bottom / cover no-repeat,
-    linear-gradient(to bottom, #c9daf1, #e1edf6);
+  max-width: 1100px;
+  margin: 40px auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.clientes-carousel {
+  display: flex;
+  gap: 24px;
+  padding: 20px 10px;
+  scrollbar-width: none;
+}
+
+.clientes-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.cliente-card {
+  flex: 0 0 220px;
+  height: 120px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.cliente-card img {
+  max-width: 70%;
+  max-height: 60%;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.cliente-card:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Botões */
+.carousel-btn {
+  background: #0b3c78;
+  color: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.carousel-btn:hover {
+  background: #062c58;
+}
+
+.carousel-btn.prev {
+  margin-right: 10px;
+}
+
+.carousel-btn.next {
+  margin-left: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+ 
+  .cliente-card {
+    flex: 0 0 180px;
+  }
 }
 
 
+
 .section--cases {
-  background: linear-gradient(to bottom, #b0d4f1, #a1c0e1);
+  background: linear-gradient(to bottom, #6189aa, #a9c4e0);
 }
 
 .section--diferenciais {
@@ -640,10 +732,10 @@ button[type="submit"]:hover {
 }
 
 .section--equipe {
-  background: linear-gradient(to bottom, #92adc1, #7e99b0);
+  background: linear-gradient(to bottom, #7192ab, #539fe2);
 }
 /* ============================================================
-   KMD CHAT – CENTRAL DE ATENDIMENTO (estilo BRK)
+   KMD CHAT – CENTRAL DE ATENDIMENTO (estilo KMD)
 ============================================================ */
 
 .kmd-chat-toggle {
@@ -774,4 +866,512 @@ button[type="submit"]:hover {
   color: #0b5fa5;
   text-decoration: none;
   font-weight: 600;
+}
+/* ============================================================
+   AJUSTES DE RITMO VISUAL – PADRÃO KMD
+   (não destrutivo / override consciente)
+============================================================ */
+
+/* 1️⃣ Ritmo vertical padrão entre seções */
+.secao,
+.section,
+.secao-extra,
+.contato {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* Seções mais leves */
+.bloco--suave,
+.section--clientes {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Hero continua dominante */
+.hero {
+  padding: 140px 40px 150px;
+}
+
+/* 2️⃣ Hierarquia tipográfica clara */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto 35px;
+}
+.section-container,
+.secao,
+.qs-container,
+.contato-container {
+  max-width: 1100px;
+}
+
+
+/* Títulos principais de seção */
+.section-header h2,
+.secao-extra h1,
+.quem-somos h1 {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+/* Subtítulos */
+.section-header p,
+.secao-extra p {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+/* 3️⃣ Cards respirando mais */
+.card {
+  padding: 40px 30px;
+}
+
+.card h3 {
+  margin-bottom: 18px;
+}
+
+/* 4️⃣ Carrossel com mais presença */
+.section--clientes h1 {
+  margin-bottom: 12px;
+}
+
+.section--clientes p {
+  margin-bottom: 50px;
+}
+
+/* 5️⃣ Transição visual mais elegante entre blocos */
+.bloco--claro + .bloco--suave,
+.bloco--suave + .bloco--claro {
+  padding-top: 100px;
+}
+
+/* 6️⃣ Mobile – ritmo consistente */
+@media (max-width: 768px) {
+  .secao,
+  .section,
+  .secao-extra,
+  .contato {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .hero {
+    padding: 120px 20px;
+  }
+
+  .section-header h2,
+  .secao-extra h1,
+  .quem-somos h1 {
+    font-size: 30px;
+  }
+}
+/* ============================================================
+   AJUSTES DE LARGURA E LEITURA – PADRÃO KMD
+============================================================ */
+
+/* 1️⃣ Limite real de leitura */
+.section-container,
+.secao,
+.secao-extra > *,
+.quem-somos .qs-container,
+.contato-container {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2️⃣ Texto longo: largura confortável */
+.section-header p,
+.secao-extra p,
+.qs-texto p,
+.contato-header p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3️⃣ Parágrafos longos alinhados à esquerda */
+.qs-texto p,
+.contato-header p {
+  text-align: left;
+}
+
+/* Centralização apenas onde faz sentido */
+.section-header,
+.secao-extra h1,
+.secao-extra > h1 {
+  text-align: center;
+}
+
+/* 4️⃣ Cards: menos largura, mais elegância */
+.secao {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+/* Cards respirando melhor */
+.card {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 5️⃣ Carrossel de clientes mais alinhado */
+.section--clientes p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Wrapper do carrossel bem definido */
+.clientes-carousel-wrapper {
+  max-width: 1180px;
+}
+
+/* 6️⃣ Quem Somos – leitura premium */
+.qs-container {
+  max-width: 1180px;
+}
+
+.qs-texto {
+  max-width: 560px;
+}
+
+/* 7️⃣ Desktop grande (ultrawide) */
+@media (min-width: 1600px) {
+  body {
+    background: #eef4fb;
+  }
+
+  .hero,
+  footer {
+    max-width: 1600px;
+    margin: auto;
+  }
+}
+
+/* 8️⃣ Mobile – leitura segura */
+@media (max-width: 768px) {
+  .section-header p,
+  .secao-extra p,
+  .qs-texto p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+/* ============================================================
+   REFINO DE CARDS – PADRÃO KMD
+============================================================ */
+
+/* Base mais leve */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 28px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover elegante (sem pulo exagerado) */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+  background: #ffffff;
+}
+
+/* Títulos mais fortes */
+.card h2,
+.card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+/* Texto mais confortável */
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* Cards clicáveis (links) */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Evita underline estranho */
+.card-link:hover {
+  text-decoration: none;
+}
+
+/* Cards de logo (clientes) */
+.card--logo,
+.cliente-card {
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  border-radius: 14px;
+}
+
+/* Hover de logos: nada de pulo */
+.card--logo:hover,
+.cliente-card:hover {
+  transform: none;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Cards de equipe */
+.card--team {
+  text-align: center;
+}
+
+.card--team h3 {
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+.card--team p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Remove gradiente agressivo antigo */
+.card:hover {
+  background-image: none !important;
+}
+
+/* Mobile: interação ainda mais sutil */
+@media (max-width: 768px) {
+  .card:hover {
+    transform: none;
+  }
+}
+/* ============================================================
+   ESPAÇAMENTO VERTICAL – PADRÃO KMD
+============================================================ */
+
+/* 1️⃣ Espaço entre seções */
+section {
+  margin-bottom: 0;
+}
+
+/* Seções padrão */
+.secao,
+.secao-extra,
+.section,
+.contato {
+  padding-top: 100px;
+  padding-bottom: 110px;
+}
+
+/* Seções suaves ganham mais ar */
+.bloco--suave {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* 2️⃣ Hero precisa preparar a página */
+.hero {
+  padding-top: 180px;
+  padding-bottom: 190px;
+}
+
+/* 3️⃣ Títulos respiram */
+.secao > h1,
+.secao-extra > h1,
+.section-header h2,
+.quem-somos h1,
+.contato h1 {
+  margin-bottom: 40px;
+}
+
+/* Subtítulos mais próximos */
+.secao > p,
+.secao-extra > p,
+.section-header p {
+  margin-bottom: 70px;
+}
+
+/* 4️⃣ Conteúdo não cola no título */
+.secao .card-grid,
+.secao .clientes-carousel-wrapper,
+.secao-extra .card-grid,
+.secao-extra .clientes-carousel-wrapper {
+  margin-top: 10px;
+}
+
+/* 5️⃣ Quem Somos separado com elegância */
+.quem-somos {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.qs-imagem img {
+  width: 95%;
+  max-width: none;
+  transform: translateX(-5%);
+}
+
+
+/* 6️⃣ Footer não cola no conteúdo */
+footer {
+  margin-top: 120px;
+}
+
+/* 7️⃣ Mobile – menos espaço, mas ainda premium */
+@media (max-width: 768px) {
+  .secao,
+  .secao-extra,
+  .section,
+  .contato {
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+
+  .hero {
+    padding-top: 130px;
+    padding-bottom: 140px;
+  }
+
+  footer {
+    margin-top: 80px;
+  }
+}
+/* ============================================================
+   TIPOGRAFIA – PADRÃO KMD
+============================================================ */
+
+/* Base de leitura */
+body {
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.1px;
+  color: #3a4a5e;
+}
+
+/* ================= TITULOS ================= */
+
+/* Títulos principais */
+h1 {
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--azul-escuro);
+}
+
+/* Títulos de seção */
+h2 {
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: var(--azul-escuro);
+}
+
+/* Títulos internos (cards, blocos) */
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  color: var(--azul-escuro);
+}
+
+/* ================= TEXTO ================= */
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Texto auxiliar */
+small,
+.text-muted {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================= HERO ================= */
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 52px);
+  letter-spacing: -0.8px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+/* ================= CARDS ================= */
+
+.card h2,
+.card h3 {
+  letter-spacing: -0.3px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #556174;
+}
+
+/* ================= BOTÕES ================= */
+
+.btn,
+.btn-outline,
+.btn-fill,
+.portal-btn {
+  background-color: var(--azul-escuro);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* ==============================
+   CLIENTES – MOVIMENTO CONTÍNUO
+================================ */
+
+.clientes-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.clientes-carousel {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+
+  animation: clientes-scroll 40s linear infinite;
+}
+
+@keyframes clientes-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
