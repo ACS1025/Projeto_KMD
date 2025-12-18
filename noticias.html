@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notícias – Sentinela GR</title>
+  <title>Notícias – Komando GR</title>
   <meta name="description" content="Notícias atualizadas sobre transporte rodoviário, segurança, logística e gerenciamento de riscos.">
 
   <!-- FontAwesome + seu CSS principal -->
@@ -65,7 +65,7 @@
         <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:contato@sentinelagr.com"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:contato@Komandogr.com"><i class="fas fa-envelope"></i></a>
       </div>
 
       <div class="logo-area">
@@ -99,11 +99,7 @@
     <div id="newsGrid" class="news-grid"></div>
   </main>
 
-  <footer class="rodape">
-    <div class="rodape-conteudo">
-      <p>© 2025 — Sentinela GR. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+ 
 
   <!-- MODAL -->
   <div id="modalOverlay" class="modal-overlay">
@@ -132,151 +128,42 @@
   </div>
 
   <!-- SCRIPT FINAL 100% FUNCIONANDO -->
-  <script>
-    const NEWS = [
-      {
-        id: "20251212-br116-fiscalizacao",
-        data: "12/12/2025",
-        titulo: "BR-116 tem reforço de fiscalização para reduzir roubos de carga",
-        subtitulo: "Operação conjunta da PRF e órgãos estaduais",
-        local: "BR-116 — Trecho RJ / SP",
-        imagem: "img/br116-fiscalizacao.jpg",
-        conteudo: [
-          "A Polícia Rodoviária Federal intensificou ações de monitoramento ao longo da BR-116, uma das rotas com maior índice de ocorrências envolvendo veículos de carga.",
-          "As medidas incluem bloqueios móveis, revistas, viaturas com câmeras e apoio aéreo em trechos críticos.",
-          "Recomendação: se possível, adie passagens noturnas por trechos de maior risco."
-        ]
-      },
-      {
-        id: "20251210-diretrizes-gr",
-        data: "10/12/2025",
-        titulo: "Novas diretrizes de gerenciamento de riscos entram em vigor",
-        subtitulo: "Checklist digital e rotas inteligentes serão exigidos",
-        local: "Nacional",
-        imagem: "img/diretrizes-gr.jpg",
-        conteudo: [
-          "Empresas de transporte agora devem adotar protocolos mínimos de segurança, incluindo checklist digital, rotas inteligentes e rastreamento contínuo.",
-          "Auditorias poderão ser realizadas para verificar se empresas cumprem os novos requisitos."
-        ]
-      },
-      {
-        id: "20251203-volume-cargas",
-        data: "03/12/2025",
-        titulo: "Volume de cargas aumenta e eleva demanda por monitoramento 24h",
-        subtitulo: "Mercado pede serviços integrados de rastreamento",
-        local: "Setor logístico",
-        imagem: "img/monitoramento-24h.jpg",
-        conteudo: [
-          "O crescimento do e-commerce aumentou a procura por empresas especializadas em rastreamento e segurança.",
-          "Operações 24/7 tornaram-se essenciais para evitar atrasos e minimizar riscos."
-        ]
-      },
-      {
-        id: "20251129-chuvas-interdicoes",
-        data: "29/11/2025",
-        titulo: "Chuvas intensas causam interdições em rodovias do Sul e Sudeste",
-        subtitulo: "Quedas de barreira e alagamentos em pontos críticos",
-        local: "PR / SC / SP",
-        imagem: "img/chuvas-rodovia.jpg",
-        conteudo: [
-          "Vários trechos registraram interdições temporárias. Equipes trabalham na limpeza e liberação das pistas.",
-          "Motoristas devem reduzir velocidade e acompanhar atualizações oficiais."
-        ]
-      }
-    ];
+<script src="js/noticias.js"></script>
 
-    function escapeHtml(s=''){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-    function stripTags(html=''){ return String(html).replace(/<[^>]*>/g,''); }
+<!-- BOTÃO DO CHAT  -->   
+    <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
-    const grid = document.getElementById('newsGrid');
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
+  <div class="kmd-chat-header">
+    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
+    <button class="kmd-chat-close" id="kmdChatClose">×</button>
+  </div>
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
+      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
+    </div>
+  </div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+</div>
 
-    function renderList(){
-      grid.innerHTML = NEWS.map((n, idx) => `
-        <article class="noticia-card">
-          <img class="noticia-thumb" src="${n.imagem}">
-          <div>
-            <div class="noticia-data"><span>${escapeHtml(n.local)}</span> • <span>${escapeHtml(n.data)}</span></div>
-            <h3 class="noticia-titulo">${escapeHtml(n.titulo)}</h3>
-            <p class="noticia-excerpt">${escapeHtml(stripTags(n.conteudo.join(' '))).slice(0,190)}...</p>
-            <div class="card-actions"><button class="btn-ler" data-index="${idx}">Ler mais</button></div>
-          </div>
-        </article>
-      `).join('');
+<footer class="rodape">
+  <div class="rodape-conteudo">
+    <p>© 2025 — Komando GR. Todos os direitos reservados.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/komando/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</footer>
 
-      document.querySelectorAll('.btn-ler').forEach(b =>
-        b.addEventListener('click', e => abrirModal(Number(e.target.dataset.index)))
-      );
-    }
+<script src="script.js" defer></script>
 
-    // MODAL
-    const overlay = document.getElementById('modalOverlay');
-    const modalThumb = document.getElementById('modalThumb');
-    const modalMeta = document.getElementById('modalMeta');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSubtitle = document.getElementById('modalSubtitle');
-    const modalContent = document.getElementById('modalContent');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const closeBtn = document.getElementById('modalClose');
-    const waShare = document.getElementById('waShare');
-    const liShare = document.getElementById('liShare');
-
-    let current = -1;
-
-    function abrirModal(index){
-      const n = NEWS[index];
-      current = index;
-
-      modalThumb.src = n.imagem;
-      modalMeta.textContent = `${n.local} • ${n.data}`;
-      modalTitle.textContent = n.titulo;
-      modalSubtitle.textContent = n.subtitulo;
-      modalContent.innerHTML = n.conteudo.map(p => `<p>${p}</p>`).join('');
-
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index === NEWS.length - 1;
-
-      const shareUrl = location.origin + location.pathname + `#news-${n.id}`;
-      waShare.href = `https://wa.me/?text=${encodeURIComponent(n.titulo + " — " + shareUrl)}`;
-      liShare.href = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(shareUrl)}`;
-
-      overlay.classList.add('show');
-      document.documentElement.style.overflow = 'hidden';
-      history.replaceState(null,'',`#news-${n.id}`);
-    }
-
-    function fecharModal(){
-      overlay.classList.remove('show');
-      document.documentElement.style.overflow = '';
-      history.replaceState(null,'',location.pathname);
-    }
-
-    prevBtn.addEventListener('click',()=> abrirModal(current-1));
-    nextBtn.addEventListener('click',()=> abrirModal(current+1));
-    closeBtn.addEventListener('click', fecharModal);
-    overlay.addEventListener('click', e => { if(e.target === overlay) fecharModal(); });
-
-    // 🔥 Navegação por teclado (FALTAVA ESSA PARTE)
-    document.addEventListener('keydown', (e) => {
-      if(!overlay.classList.contains('show')) return;
-
-      if(e.key === 'Escape') fecharModal();
-      if(e.key === 'ArrowLeft' && current>0) abrirModal(current-1);
-      if(e.key === 'ArrowRight' && current<NEWS.length-1) abrirModal(current+1);
-    });
-
-    // 🔥 Deep-link automático: abrir notícia direto pelo hash
-    window.addEventListener('load', () => {
-      const h = location.hash.replace('#news-', '');
-      if(!h) return;
-      const idx = NEWS.findIndex(n => n.id === h);
-      if(idx >= 0) {
-        setTimeout(()=> abrirModal(idx), 150);
-      }
-    });
-
-    renderList();
-  </script>
+<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
 
 </body>
 </html>

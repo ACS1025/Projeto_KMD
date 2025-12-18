@@ -1,0 +1,25 @@
+[
+  {
+    "evento_id": "EVT-20251215-001",
+    "timestamp": "2025-12-15T09:12:00",
+    "titulo": "Reforço policial na BR-116 após aumento de roubos",
+    "subtitulo": "PRF intensifica fiscalização em trechos críticos",
+    "categoria": "SEGURANCA",
+    "tipo": "ROUBO_CARGA",
+    "criticidade": "ALTA",
+    "score_risco": 82,
+    "localizacao": {
+      "rodovia": "BR-116",
+      "uf": ["SP", "RJ"]
+    },
+    "imagem": "img/br116-fiscalizacao.jpg",
+    "conteudo": [
+      "A PRF intensificou ações de monitoramento...",
+      "Recomendação: evitar circulação noturna."
+    ],
+    "acao_recomendada": [
+      "Ativar monitoramento ativo",
+      "Reavaliar rota"
+    ]
+  }
+]
