@@ -4,7 +4,7 @@ async function loadEvents(){
   try {
     const res = await fetch('data/events.json');
     EVENTS = await res.json();
-    renderList();
+      ();
   } catch (e) {
     console.error('Erro ao carregar events.json', e);
   }
