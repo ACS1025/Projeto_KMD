@@ -12,14 +12,59 @@
       "rodovia": "BR-116",
       "uf": ["SP", "RJ"]
     },
-    "imagem": "img/br116-fiscalizacao.jpg",
+    "imagem": "images/eventos/alta.jpg",
     "conteudo": [
-      "A PRF intensificou ações de monitoramento...",
-      "Recomendação: evitar circulação noturna."
+      "A Polícia Rodoviária Federal ampliou o efetivo em pontos críticos da BR-116.",
+      "Transportadoras devem reforçar protocolos de segurança e rastreamento."
     ],
     "acao_recomendada": [
       "Ativar monitoramento ativo",
-      "Reavaliar rota"
+      "Evitar circulação noturna"
+    ]
+  },
+  {
+    "evento_id": "EVT-20251215-002",
+    "timestamp": "2025-12-14T15:40:00",
+    "titulo": "Congestionamento na BR-381 devido a obras",
+    "subtitulo": "Intervenções causam lentidão no trecho urbano",
+    "categoria": "OPERACIONAL",
+    "tipo": "OBRAS",
+    "criticidade": "MEDIA",
+    "score_risco": 48,
+    "localizacao": {
+      "rodovia": "BR-381",
+      "uf": ["MG"]
+    },
+    "imagem": "images/eventos/media.jpg",
+    "conteudo": [
+      "Obras de manutenção provocaram congestionamentos durante o horário comercial.",
+      "O fluxo deve ser normalizado no período noturno."
+    ],
+    "acao_recomendada": [
+      "Planejar rotas alternativas",
+      "Acompanhar atualizações operacionais"
+    ]
+  },
+  {
+    "evento_id": "EVT-20251215-003",
+    "timestamp": "2025-12-13T08:10:00",
+    "titulo": "Trânsito normalizado na BR-101",
+    "subtitulo": "Fluxo liberado após liberação total da pista",
+    "categoria": "LOGISTICA",
+    "tipo": "FLUXO",
+    "criticidade": "BAIXA",
+    "score_risco": 15,
+    "localizacao": {
+      "rodovia": "BR-101",
+      "uf": ["SC"]
+    },
+    "imagem": "images/eventos/baixa.jpg",
+    "conteudo": [
+      "Após interdição parcial, a BR-101 teve o tráfego totalmente liberado.",
+      "Não há impactos relevantes na operação logística."
+    ],
+    "acao_recomendada": [
+      "Manter operação normal"
     ]
   }
 ]

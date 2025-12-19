@@ -54,7 +54,121 @@
       .noticias-wrapper{ margin-top:100px; }
       .modal-title{ font-size:1.2rem; }
     }
-  </style>
+    /* =========================
+   CRITICIDADE
+========================= */
+
+.badge-criticidade {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.criticidade-alta {
+  background: #d32f2f;
+}
+
+.criticidade-media {
+  background: #f9a825;
+}
+
+.criticidade-baixa {
+  background: #2e7d32;
+}
+
+/* Destaque lateral no card */
+.noticia-card.alta {
+  border-left: 5px solid #d32f2f;
+}
+
+.noticia-card.media {
+  border-left: 5px solid #f9a825;
+}
+
+.noticia-card.baixa {
+  border-left: 5px solid #2e7d32;
+}
+
+/* =========================
+   FILTRO NOTÍCIAS
+========================= */
+
+.filtro-noticias {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 30px;
+}
+
+.filtro-noticias button {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filtro-noticias button.ativo {
+  background: #0b3c78;
+  color: #fff;
+  border-color: #0b3c78;
+}
+
+
+.news-filters{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.news-filters select{
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #ccd6f5;
+  font-weight:600;
+}
+
+/* =========================
+   SCORE DE RISCO
+========================= */
+.score-risco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.score-baixo { background: #2ecc71; }
+.score-medio { background: #f1c40f; }
+.score-alto  { background: #e74c3c; }
+
+.score-num {
+  min-width: 36px;
+  text-align: right;
+}
+
+
+</style>
 </head>
 <body>
 
@@ -99,7 +213,24 @@
     <div id="newsGrid" class="news-grid"></div>
   </main>
 
+  <div class="news-filters">
+  <select id="filtroUF">
+    <option value="">UF (todas)</option>
+  </select>
+
+  <select id="filtroRodovia">
+    <option value="">Rodovia (todas)</option>
+  </select>
+</div>
+
+
  
+<div class="filtro-noticias">
+  <button data-filter="ALL" class="ativo">Todas</button>
+  <button data-filter="ALTA">Alta</button>
+  <button data-filter="MEDIA">Média</button>
+  <button data-filter="BAIXA">Baixa</button>
+</div>
 
   <!-- MODAL -->
   <div id="modalOverlay" class="modal-overlay">
@@ -127,8 +258,6 @@
     </div>
   </div>
 
-  <!-- SCRIPT FINAL 100% FUNCIONANDO -->
-<script src="js/noticias.js"></script>
 
 <!-- BOTÃO DO CHAT  -->   
     <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
@@ -161,9 +290,11 @@
   </div>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="js/noticias.js" defer></script>
 
 <script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
+
+<script src="js/noticias.js"></script>
 
 </body>
 </html>
