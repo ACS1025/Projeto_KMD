@@ -38,6 +38,7 @@
 <body>
 
 <header class="top-header">
+  
   <div class="header-superior">
 
 
@@ -58,8 +59,9 @@
   <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
 </div>
 
-  </div>
 
+
+  </div>
   <nav class="menu-principal" aria-label="Menu principal">
     <a href="empresa.html">A Empresa</a>
     <a href="riscos.html">Gestão de Riscos</a>
@@ -71,6 +73,8 @@
     <a href="equipe.html">Equipe</a>
     <a href="contato.html">Contato</a>
   </nav>
+
+  
 </header>
 
 <section class="hero">
@@ -91,7 +95,7 @@
 <section class="quem-somos" id="empresa">
   <div class="qs-container">
     <div class="qs-texto">
-      <h1>Quem Somos</h1>
+      <h2>Quem Somos</h2>
       <p>Com sede em São Paulo, a Komando está interligada aos melhores provedores de telecomunicação e rastreamento, garantindo controle e gestão de riscos em operações no Mercosul.</p>
       <div class="qs-botoes">
         <a href="empresa.html" class="btn-outline">Sobre Nós</a>
@@ -104,7 +108,7 @@
 
 <section class="secao-extra bloco bloco--claro section--clientes" id="clientes">
   <header class="secao-header">
-    <h1>Clientes</h1>
+    <h2>Clientes</h2>
     <p>Empresas que confiam na Komando GR.</p>
   </header>
 
@@ -126,7 +130,7 @@
 
 
 <section class="secao-extra bloco section--cases" id="cases">
-  <h1>Cases de Sucesso</h1>
+  <h2>Cases de Sucesso</h2>
   <div class="secao card-grid">
     <div class="card"><h3>Case 1</h3><p>Resultados obtidos…</p></div>
     <div class="card"><h3>Case 2</h3><p>Estratégias aplicadas…</p></div>
@@ -135,7 +139,7 @@
 </section>
 
 <section class="secao-extra bloco section--diferenciais" id="diferenciais">
-  <h1>Diferenciais</h1>
+  <h2>Diferenciais</h2>
   <div class="secao card-grid">
     <div class="card"><h3>Monitoramento 24/7</h3><p>Atuação contínua e preventiva.</p></div>
     <div class="card"><h3>Análise baseada em dados</h3><p>Decisões orientadas por inteligência.</p></div>
@@ -145,7 +149,7 @@
 </section>
 
 <section class="secao-extra bloco section--equipe" id="equipe">
-  <h1>Equipe</h1>
+  <h2>Equipe</h2>
   <div class="secao card-grid">
     <div class="card card--team"><div class="foto"></div><h3>Silva</h3><p>Diretora Operacional</p></div>
     <div class="card card--team"><div class="foto"></div><h3>Marcos Torres</h3><p>Especialista em Riscos</p></div>
@@ -154,7 +158,7 @@
 </section>
 
 <section class="contato" id="contato">
-  <h1>Entre em Contato</h1>
+  <h2>Entre em Contato</h2>
   <form action="/enviar-contato" method="POST">
     <input type="text" name="nome" placeholder="Nome" required>
     <input type="email" name="email" placeholder="E-mail" required>
@@ -194,9 +198,21 @@
   </div>
 </footer>
 
-<script src="script.js" defer></script>
+<!-- MENU MOBILE (fora do header) -->
+<button class="mobile-menu-icon" aria-label="Abrir menu" aria-expanded="false">
+  <i class="fas fa-bars"></i>
+</button>
 
-<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
+<nav id="mobileNav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="clientes.html">Clientes</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+<div id="mobileOverlay"></div>
+
+<script src="script.js" defer></script>
 
 </body>
 </html>

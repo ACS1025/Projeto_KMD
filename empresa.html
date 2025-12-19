@@ -196,9 +196,6 @@ Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verda
   </div>
 </footer>
 
-<script src="script.js" defer></script>
-
-<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script><!-- SCRIPT -->
 <script>
   const cards = Array.from(document.querySelectorAll('.empresa-card'));
   const modal = document.getElementById('empresaModal');
@@ -261,6 +258,8 @@ Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verda
     if (e.key === 'ArrowRight' && currentIndex < cards.length - 1) openModal(currentIndex + 1);
   });
 </script>
+
+<script src="script.js" defer></script>
 
 </body>
 </html>

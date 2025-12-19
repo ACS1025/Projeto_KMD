@@ -134,15 +134,25 @@ modalAtendimento?.addEventListener("click", (e) => {
   }
 });
 
-/* ==================================================
-   MENU MOBILE ALTERNATIVO (mantido, só formatado)
-================================================== */
-const btn = document.getElementById("mobileMenuBtn");
-const menuMobile = document.getElementById("menuMobile");
+// ============================================================
+// Chat flutuante Komando GR
+// ============================================================
 
-if (btn && menuMobile) {
-  btn.addEventListener("click", () => {
-    menuMobile.classList.toggle("active");
-    btn.classList.toggle("active");
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('kmdChatToggle');
+  const chat = document.getElementById('kmdChat');
+  const close = document.getElementById('kmdChatClose');
+
+  // Proteção: só executa se os elementos existirem
+  if (!toggle || !chat || !close) return;
+
+  toggle.addEventListener('click', () => {
+    chat.classList.toggle('show');
+    chat.setAttribute('aria-hidden', !chat.classList.contains('show'));
   });
-}
+
+  close.addEventListener('click', () => {
+    chat.classList.remove('show');
+    chat.setAttribute('aria-hidden', 'true');
+  });
+});

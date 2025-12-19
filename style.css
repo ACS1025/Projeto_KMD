@@ -632,6 +632,8 @@ button[type="submit"]:hover {
   padding: 60px 40px;
   background: linear-gradient(to bottom, #e7f1ff, #cfe4ff);
 }
+
+
 /* ==============================
    CLIENTES – CARROSSEL
 ================================ */
@@ -1378,3 +1380,75 @@ small,
     transform: translateX(-50%);
   }
 }
+/* ==================================================
+   MENU MOBILE – NÃO INVADE O LAYOUT
+================================================== */
+
+/* Escondido no desktop */
+.mobile-menu-icon,
+#mobileNav,
+#mobileOverlay {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+
+  .mobile-menu-icon {
+    display: flex;
+    position: fixed;
+    top: 22px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    z-index: 1201;
+    cursor: pointer;
+  }
+
+  #mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 1200;
+  }
+
+  #mobileOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #0b3c78;
+    padding: 120px 30px 30px;
+    transition: right 0.3s ease;
+    z-index: 1202;
+  }
+
+  #mobileNav.open {
+    right: 0;
+  }
+
+  #mobileNav a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
