@@ -1451,4 +1451,22 @@ small,
     text-decoration: none;
   }
 }
+.cards-home .card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 15px;
+}
+.cards-home .card {
+  overflow: hidden;
+}
+
+.cards-home .card img {
+  transition: transform 0.4s ease;
+}
+
+.cards-home .card:hover img {
+  transform: scale(1.05);
+}
 

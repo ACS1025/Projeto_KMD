@@ -156,3 +156,4 @@ document.addEventListener('DOMContentLoaded', () => {
     chat.setAttribute('aria-hidden', 'true');
   });
 });
+
