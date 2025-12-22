@@ -1,70 +1,36 @@
 [
   {
-    "evento_id": "EVT-20251215-001",
-    "timestamp": "2025-12-15T09:12:00",
-    "titulo": "Reforço policial na BR-116 após aumento de roubos",
-    "subtitulo": "PRF intensifica fiscalização em trechos críticos",
-    "categoria": "SEGURANCA",
-    "tipo": "ROUBO_CARGA",
-    "criticidade": "ALTA",
-    "score_risco": 82,
-    "localizacao": {
-      "rodovia": "BR-116",
-      "uf": ["SP", "RJ"]
+    "id": "EVT-BASE-001",
+    "tipo": "SEGURANCA",
+    "subtipo": "ROUBO_DE_CARGA",
+
+    "severidade": {
+      "nivel": "ALTO",
+      "score": 78
     },
-    "imagem": "images/eventos/alta.jpg",
-    "conteudo": [
-      "A Polícia Rodoviária Federal ampliou o efetivo em pontos críticos da BR-116.",
-      "Transportadoras devem reforçar protocolos de segurança e rastreamento."
-    ],
-    "acao_recomendada": [
-      "Ativar monitoramento ativo",
-      "Evitar circulação noturna"
-    ]
-  },
-  {
-    "evento_id": "EVT-20251215-002",
-    "timestamp": "2025-12-14T15:40:00",
-    "titulo": "Congestionamento na BR-381 devido a obras",
-    "subtitulo": "Intervenções causam lentidão no trecho urbano",
-    "categoria": "OPERACIONAL",
-    "tipo": "OBRAS",
-    "criticidade": "MEDIA",
-    "score_risco": 48,
-    "localizacao": {
-      "rodovia": "BR-381",
-      "uf": ["MG"]
+
+    "abrangencia": {
+      "regiao": "SUDESTE",
+      "ufs": ["SP", "RJ", "MG"],
+      "corredores": [
+        "São Paulo → Rio de Janeiro",
+        "Campinas → Belo Horizonte"
+      ]
     },
-    "imagem": "images/eventos/media.jpg",
-    "conteudo": [
-      "Obras de manutenção provocaram congestionamentos durante o horário comercial.",
-      "O fluxo deve ser normalizado no período noturno."
-    ],
-    "acao_recomendada": [
-      "Planejar rotas alternativas",
-      "Acompanhar atualizações operacionais"
-    ]
-  },
-  {
-    "evento_id": "EVT-20251215-003",
-    "timestamp": "2025-12-13T08:10:00",
-    "titulo": "Trânsito normalizado na BR-101",
-    "subtitulo": "Fluxo liberado após liberação total da pista",
-    "categoria": "LOGISTICA",
-    "tipo": "FLUXO",
-    "criticidade": "BAIXA",
-    "score_risco": 15,
-    "localizacao": {
-      "rodovia": "BR-101",
-      "uf": ["SC"]
+
+    "contexto": {
+      "modal": "RODOVIARIO",
+      "janela_critica": "NOTURNA"
     },
-    "imagem": "images/eventos/baixa.jpg",
-    "conteudo": [
-      "Após interdição parcial, a BR-101 teve o tráfego totalmente liberado.",
-      "Não há impactos relevantes na operação logística."
-    ],
-    "acao_recomendada": [
-      "Manter operação normal"
+
+    "fonte": {
+      "nome": "Monitoramento Komando GR",
+      "sigla": "KGR"
+    },
+
+    "recomendacoes": [
+      "Reforçar escolta em janelas críticas",
+      "Evitar paradas fora de pontos homologados"
     ]
   }
 ]
