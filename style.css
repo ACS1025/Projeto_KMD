@@ -1512,3 +1512,177 @@ small,
   max-width: 260px;
 }
 
+/* ============================================================
+   PATCH GLOBAL – ADAPTAÇÃO PARA MÚLTIPLAS TELAS
+   NÃO REMOVE NADA DO CSS EXISTENTE
+============================================================ */
+
+/* Limite visual para telas muito grandes */
+.container,
+.secao,
+section {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Evita overflow horizontal em qualquer cenário */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+
+  /* Grid vira coluna sem quebrar cards */
+  .card-grid,
+  .grid,
+  .cards,
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Textos respiram melhor */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .card-grid,
+  .grid,
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.7rem; }
+}
+@media (min-width: 1600px) {
+
+  body {
+    font-size: 1.05rem;
+  }
+
+  .container,
+  .secao,
+  section {
+    max-width: 1600px;
+  }
+}
+/* =====================================================
+   PATCH REAL – MOBILE LIMPO (SEM QUEBRAR NADA)
+===================================================== */
+
+  @media (max-width: 1024px) {
+
+ 
+
+  /* ORGANIZA HEADER NO MOBILE */
+  .header-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+
+  /* ESCONDE MENU DESKTOP */
+  .menu-principal {
+    display: none !important;
+  }
+
+  /* ESCONDE ÍCONES SOCIAIS SE QUISER (opcional) */
+  .social-icons {
+    display: none;
+  }
+
+  /* HAMBÚRGUER CORRETO */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1200;
+  }
+
+  .menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+  }
+
+  /* MENU MOBILE (slide / dropdown) */
+  .menu-mobile {
+    display: none;
+    flex-direction: column;
+    background: #0b3c78;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+  }
+
+  .menu-mobile a {
+    padding: 14px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .menu-mobile.active {
+    display: flex;
+  }
+}
+
+
+  /* REMOVE ESPAÇO RESERVADO DO HEADER */
+  body {
+    padding-top: 0 !important;
+  }
+
+  /* GARANTE QUE SÓ O MENU MOBILE EXISTE */
+  .menu-principal {
+    display: none !important;
+  }
+
+  /* HAMBÚRGUER SEM INTERFERÊNCIA */
+  .mobile-menu-icon {
+    display: flex !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1300;
+  }
+
+  /* MENU MOBILE ISOLADO */
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mobileNav a {
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+
+@media (max-width: 1024px) {
+
+  /* ESCONDE AÇÕES DO HEADER NO MOBILE */
+  .right-actions {
+    display: none !important;
+  }
+
+}
