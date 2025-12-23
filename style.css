@@ -1686,3 +1686,121 @@ html, body {
   }
 
 }
+.top-header,
+.header-superior,
+.menu-principal {
+  max-width: 100%;
+  width: 100%;
+}
+.secao,
+.qs-container,
+.card-grid,
+.rodape-conteudo,
+.hero-content {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.hero {
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 1280px;
+}
+/* =====================================================
+   PATCH DEFINITIVO – MENU HAMBÚRGUER (SEM CONFLITOS)
+===================================================== */
+
+/* DESATIVA IMPLEMENTAÇÕES ANTIGAS */
+.menu-toggle,
+.menu-toggle span,
+.menu-mobile {
+  display: none !important;
+}
+
+/* DESKTOP */
+.mobile-menu-icon,
+#mobileNav,
+#mobileOverlay {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+
+  /* Header limpo */
+  .menu-principal {
+    display: none !important;
+  }
+
+  .right-actions {
+    display: none !important;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  /* Botão hambúrguer */
+  .mobile-menu-icon {
+    display: flex;
+    position: fixed;
+    top: 22px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1300;
+  }
+
+  /* Overlay */
+  #mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1200;
+  }
+
+  #mobileOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menu lateral */
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #0b3c78;
+    padding: 120px 30px 30px;
+    transition: right 0.3s ease;
+    z-index: 1400;
+  }
+
+  #mobileNav.open {
+    right: 0;
+  }
+
+  #mobileNav a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
