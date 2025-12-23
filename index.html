@@ -38,7 +38,6 @@
 <body>
 
 <header class="top-header">
-  
   <div class="header-superior">
 
     <div class="social-icons" aria-label="Redes sociais">
@@ -60,27 +59,31 @@
       </a>
     </div>
 
-    <!-- BOTÃO HAMBÚRGUER (MOBILE) -->
-    <button class="mobile-menu-icon" aria-label="Abrir menu" aria-expanded="false">
+    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
       <i class="fas fa-bars"></i>
     </button>
 
   </div>
-
-  <!-- MENU DESKTOP -->
-  <nav class="menu-principal" aria-label="Menu principal">
-    <a href="empresa.html">A Empresa</a>
-    <a href="riscos.html">Gestão de Riscos</a>
-    <a href="supply.html">Supply Chain</a>
-    <a href="projetos-especiais.html">Projetos</a>
-    <a href="clients.html">Clientes</a>
-    <a href="cases.html">Cases</a>
-    <a href="diferenciais.html">Diferenciais</a>
-    <a href="equipe.html">Equipe</a>
-    <a href="contato.html">Contato</a>
-  </nav>
-
 </header>
+
+<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
+<nav class="menu-principal" aria-label="Menu principal">
+  <a href="empresa.html">A Empresa</a>
+  <a href="riscos.html">Gestão de Riscos</a>
+  <a href="supply.html">Supply Chain</a>
+  <a href="projetos-especiais.html">Projetos</a>
+  <a href="clients.html">Clientes</a>
+  <a href="cases.html">Cases</a>
+  <a href="diferenciais.html">Diferenciais</a>
+  <a href="equipe.html">Equipe</a>
+  <a href="contato.html">Contato</a>
+</nav>
 
 <!-- MENU MOBILE -->
 <nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
@@ -212,8 +215,8 @@
   <div class="secao card-grid">
 
     <div class="card">
-      <img src="img/Monitoramento 247.svg" alt="Monitoramento 24/7">
-      <h3>Monitoramento 24/7</h3>
+      <img src="img/Monitoramento 247.svg" alt="Monitoramento 24h por dia">
+      <h3>Monitoramento 24h por dia</h3>
       <p>Atuação contínua e preventiva.</p>
     </div>
 

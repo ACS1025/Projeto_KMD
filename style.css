@@ -22,103 +22,178 @@ body {
 /* ============================================================
    HEADER SUPERIOR
 ============================================================ */
+
 .top-header {
-  background: var(--azul-medio);
-  color: var(--branco);
-  width: 100%;
-  border-bottom: 1px solid #ffffff20;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   z-index: 1000;
 }
 
 .header-superior {
-  max-width: 1300px;
-  margin: auto;
-  padding: 12px 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
+  gap: 20px;
+  padding: 12px 24px;
+  background: var(--azul-medio);
 }
 
-/* Redes sociais (header e footer) */
-.social-icons a,
-.social-links a {
-  color: var(--branco);
+/* Redes sociais */
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  color: #fff;
   font-size: 16px;
-  margin-right: 10px;
-  border: 2px solid var(--branco);
-  padding: 7px 9px;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-links a:hover {
-  background: var(--branco);
-  color: var(--azul-medio);
 }
 
 /* Logo */
 .logo-area {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 1;
+  text-align: center;
 }
 
 .logo-img {
-  height: 70px;
-  transition: 0.3s;
+  max-height: 56px;
 }
 
-/* Ações */
+/* Ações direita */
 .right-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
-.search-btn i,
+.search-btn {
+  color: #fff;
+  font-size: 16px;
+}
+
 .portal-btn {
-  border: 2px solid var(--branco);
-  padding: 8px 12px;
-  border-radius: 20px;
-  color: var(--branco);
-  transition: 0.3s;
-}
-
-.search-btn i:hover,
-.portal-btn:hover {
-  background: var(--branco);
-  color: var(--azul-medio);
+  background: var(--azul-escuro);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /* ============================================================
-   MENU PRINCIPAL
+   MENU DESKTOP (ABAIXO DO HEADER)
 ============================================================ */
+
 .menu-principal {
+  position: fixed;
+  top: 88px; /* altura real do header */
+  left: 0;
+  width: 100%;
+  background: var(--azul-escuro);
   display: flex;
   justify-content: center;
-  gap: 32px;
-  padding: 15px 0;
-  font-weight: bold;
+  gap: 28px;
+  padding: 14px 20px;
+  z-index: 999;
 }
 
 .menu-principal a {
-  color: var(--branco);
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .menu-principal a:hover {
-  opacity: 0.75;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   BOTÃO MOBILE (HAMBÚRGUER)
+============================================================ */
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ============================================================
+   MENU MOBILE (SLIDE DIREITA)
+============================================================ */
+
+#mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100%;
+  background: var(--azul-escuro);
+  padding: 80px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
+
+#mobileNav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#mobileNav.open {
+  right: 0;
+}
+
+/* Overlay */
+#mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+#mobileOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+   RESPONSIVO
+============================================================ */
+
+@media (max-width: 1024px) {
+
+  .menu-principal {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .logo-area {
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   AJUSTE GLOBAL (IMPORTANTE)
+============================================================ */
+
+body {
+  padding-top: 150px; /* header + menu */
 }
 
 /* ============================================================
@@ -1384,12 +1459,6 @@ small,
    MENU MOBILE – NÃO INVADE O LAYOUT
 ================================================== */
 
-/* Escondido no desktop */
-.mobile-menu-icon,
-#mobileNav,
-#mobileOverlay {
-  display: none;
-}
 
 /* Mobile */
 @media (max-width: 1024px) {
@@ -1409,47 +1478,9 @@ small,
     cursor: pointer;
   }
 
-  #mobileOverlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    z-index: 1200;
-  }
+  
 
-  #mobileOverlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
 
-  #mobileNav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: #0b3c78;
-    padding: 120px 30px 30px;
-    transition: right 0.3s ease;
-    z-index: 1202;
-  }
-
-  #mobileNav.open {
-    right: 0;
-  }
-
-  #mobileNav a {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-  }
 }
 .cards-home .card img {
   width: 100%;
@@ -1579,228 +1610,181 @@ html, body {
     max-width: 1600px;
   }
 }
-/* =====================================================
-   PATCH REAL – MOBILE LIMPO (SEM QUEBRAR NADA)
-===================================================== */
+/* ============================================================
+   MENU ÚNICO – DESKTOP + MOBILE (SEM CONFLITOS)
+============================================================ */
 
-  @media (max-width: 1024px) {
+/* ---------- HEADER ---------- */
 
- 
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--azul-medio);
+  z-index: 1000;
+}
 
-  /* ORGANIZA HEADER NO MOBILE */
-  .header-superior {
+.header-superior {
+  max-width: 1300px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo centralizada */
+.logo-area {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- MENU DESKTOP ---------- */
+
+.menu-principal {
+  background: var(--azul-escuro);
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 14px 0;
+}
+
+.menu-principal a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.menu-principal a:hover {
+  opacity: 0.8;
+}
+
+/* Espaço correto abaixo do header fixo */
+body {
+  padding-top: 130px;
+}
+
+/* ---------- BOTÃO MOBILE ---------- */
+
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 22px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+/* ---------- OVERLAY ---------- */
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1100;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- MENU MOBILE LATERAL ---------- */
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--azul-escuro);
+  padding: 120px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: right 0.3s ease;
+  z-index: 1201;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 1024px) {
+
+  .menu-principal {
+    display: none;
+  }
+
+  .right-actions,
+  .social-icons {
+    display: none;
+  }
+
+  .mobile-menu-btn {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
+    justify-content: center;
   }
+}
+/* =========================
+   RODAPÉ – HOVER IGUAL AO CABEÇALHO
+========================= */
 
-  /* ESCONDE MENU DESKTOP */
-  .menu-principal {
-    display: none !important;
-  }
+.rodape {
+  background: var(--azul-escuro);
+  color: #ffffff;
+}
 
-  /* ESCONDE ÍCONES SOCIAIS SE QUISER (opcional) */
-  .social-icons {
-    display: none;
-  }
+.rodape a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
 
-  /* HAMBÚRGUER CORRETO */
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1200;
-  }
+/* HOVER IGUAL AO HEADER */
+.rodape a:hover {
+  color: var(--azul-claro); /* mesma cor usada no menu/header */
+  transform: translateY(-2px);
+}
 
-  .menu-toggle span {
-    width: 24px;
-    height: 3px;
-    background: #ffffff;
-    border-radius: 2px;
-  }
+/* ÍCONES SOCIAIS */
+.rodape .social-links a {
+  font-size: 18px;
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  /* MENU MOBILE (slide / dropdown) */
-  .menu-mobile {
-    display: none;
-    flex-direction: column;
-    background: #0b3c78;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1100;
-  }
-
-  .menu-mobile a {
-    padding: 14px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-  }
-
-  .menu-mobile.active {
-    display: flex;
-  }
+/* Ajuste fino para ícones (opcional, mas elegante) */
+.rodape .social-links a:hover {
+  transform: translateY(-2px) scale(1.05);
 }
 
 
-  /* REMOVE ESPAÇO RESERVADO DO HEADER */
-  body {
-    padding-top: 0 !important;
-  }
-
-  /* GARANTE QUE SÓ O MENU MOBILE EXISTE */
-  .menu-principal {
-    display: none !important;
-  }
-
-  /* HAMBÚRGUER SEM INTERFERÊNCIA */
-  .mobile-menu-icon {
-    display: flex !important;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1300;
-  }
-
-  /* MENU MOBILE ISOLADO */
-  #mobileNav {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #mobileNav a {
-    color: #ffffff !important;
-    text-decoration: none;
-  }
-
-@media (max-width: 1024px) {
-
-  /* ESCONDE AÇÕES DO HEADER NO MOBILE */
-  .right-actions {
-    display: none !important;
-  }
-
-}
-.top-header,
-.header-superior,
-.menu-principal {
-  max-width: 100%;
-  width: 100%;
-}
-.secao,
-.qs-container,
-.card-grid,
-.rodape-conteudo,
-.hero-content {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-.hero {
-  width: 100%;
-}
-
-.hero-content {
-  max-width: 1280px;
-}
-/* =====================================================
-   PATCH DEFINITIVO – MENU HAMBÚRGUER (SEM CONFLITOS)
-===================================================== */
-
-/* DESATIVA IMPLEMENTAÇÕES ANTIGAS */
-.menu-toggle,
-.menu-toggle span,
-.menu-mobile {
-  display: none !important;
-}
-
-/* DESKTOP */
-.mobile-menu-icon,
-#mobileNav,
-#mobileOverlay {
-  display: none;
-}
-
-/* MOBILE */
-@media (max-width: 1024px) {
-
-  /* Header limpo */
-  .menu-principal {
-    display: none !important;
-  }
-
-  .right-actions {
-    display: none !important;
-  }
-
-  .social-icons {
-    display: none;
-  }
-
-  /* Botão hambúrguer */
-  .mobile-menu-icon {
-    display: flex;
-    position: fixed;
-    top: 22px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 1300;
-  }
-
-  /* Overlay */
-  #mobileOverlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1200;
-  }
-
-  #mobileOverlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Menu lateral */
-  #mobileNav {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: #0b3c78;
-    padding: 120px 30px 30px;
-    transition: right 0.3s ease;
-    z-index: 1400;
-  }
-
-  #mobileNav.open {
-    right: 0;
-  }
-
-  #mobileNav a {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-  }
-}

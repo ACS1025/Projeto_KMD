@@ -12,27 +12,51 @@ if (formContato) {
 }
 
 /* ==================================================
-   MENU MOBILE
+   MENU MOBILE (HAMBÚRGUER) — DEFINITIVO
 ================================================== */
-const mobileNav = document.getElementById("mobileNav");
-const menuIcon = document.querySelector(".mobile-menu-icon");
-const mobileOverlay = document.getElementById("mobileOverlay");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".mobile-menu-icon");
+  const mobileNav = document.getElementById("mobileNav");
+  const overlay = document.getElementById("mobileOverlay");
 
-function toggleMenu() {
-  mobileNav?.classList.toggle("open");
-  menuIcon?.classList.toggle("active");
-  mobileOverlay?.classList.toggle("active");
-}
+  if (!menuBtn || !mobileNav || !overlay) return;
 
-menuIcon?.addEventListener("click", toggleMenu);
-mobileOverlay?.addEventListener("click", toggleMenu);
+  function abrirMenu() {
+    mobileNav.classList.add("open");
+    overlay.classList.add("active");
 
-document.querySelectorAll("#mobileNav a").forEach(link => {
-  link.addEventListener("click", toggleMenu);
+    menuBtn.setAttribute("aria-expanded", "true");
+    mobileNav.setAttribute("aria-hidden", "false");
+    overlay.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function fecharMenu() {
+    mobileNav.classList.remove("open");
+    overlay.classList.remove("active");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "true");
+    overlay.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+  }
+
+  function toggleMenu() {
+    mobileNav.classList.contains("open") ? fecharMenu() : abrirMenu();
+  }
+
+  menuBtn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", fecharMenu);
+
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", fecharMenu);
+  });
 });
 
 /* ==================================================
-   MODAL GLOBAL — PADRÃO DO SITE INTEIRO
+   MODAL GLOBAL — PADRÃO DO SITE
 ================================================== */
 const modal = document.getElementById("cardModal");
 const modalTitle = document.getElementById("modalTitle");
@@ -42,7 +66,6 @@ const closeModalBtn = modal?.querySelector(".closeModal");
 let currentIndex = -1;
 let currentGroup = [];
 
-/* ---------- ABRIR MODAL ---------- */
 function openModal(index) {
   const card = currentGroup[index];
   if (!card) return;
@@ -67,13 +90,11 @@ function openModal(index) {
   document.documentElement.style.overflow = "hidden";
 }
 
-/* ---------- FECHAR MODAL ---------- */
 function closeModal() {
   modal.classList.remove("show");
   document.documentElement.style.overflow = "";
 }
 
-/* ---------- TRIGGERS (CARDS) ---------- */
 document.querySelectorAll(".modal-trigger, .btn-saiba-mais").forEach(trigger => {
   trigger.addEventListener("click", () => {
     const card = trigger.closest(".card");
@@ -87,15 +108,12 @@ document.querySelectorAll(".modal-trigger, .btn-saiba-mais").forEach(trigger => 
   });
 });
 
-/* ---------- BOTÃO FECHAR ---------- */
 closeModalBtn?.addEventListener("click", closeModal);
 
-/* ---------- FECHAR CLICANDO FORA ---------- */
 modal?.addEventListener("click", (e) => {
   if (e.target === modal) closeModal();
 });
 
-/* ---------- TECLADO ---------- */
 document.addEventListener("keydown", (e) => {
   if (!modal?.classList.contains("show")) return;
 
@@ -134,38 +152,23 @@ modalAtendimento?.addEventListener("click", (e) => {
   }
 });
 
-// ============================================================
-// Chat flutuante Komando GR
-// ============================================================
+/* ==================================================
+   CHAT FLUTUANTE — KOMANDO GR
+================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("kmdChatToggle");
+  const chat = document.getElementById("kmdChat");
+  const close = document.getElementById("kmdChatClose");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('kmdChatToggle');
-  const chat = document.getElementById('kmdChat');
-  const close = document.getElementById('kmdChatClose');
-
-  // Proteção: só executa se os elementos existirem
   if (!toggle || !chat || !close) return;
 
-  toggle.addEventListener('click', () => {
-    chat.classList.toggle('show');
-    chat.setAttribute('aria-hidden', !chat.classList.contains('show'));
+  toggle.addEventListener("click", () => {
+    chat.classList.toggle("show");
+    chat.setAttribute("aria-hidden", !chat.classList.contains("show"));
   });
 
-  close.addEventListener('click', () => {
-    chat.classList.remove('show');
-    chat.setAttribute('aria-hidden', 'true');
+  close.addEventListener("click", () => {
+    chat.classList.remove("show");
+    chat.setAttribute("aria-hidden", "true");
   });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu-mobile');
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      menu.classList.toggle('active');
-    });
-  }
-
 });
