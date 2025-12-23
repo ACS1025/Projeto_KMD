@@ -1469,4 +1469,46 @@ small,
 .cards-home .card:hover img {
   transform: scale(1.05);
 }
+/* ============================================================
+   GRID DE CARDS – DIFERENCIAIS (IMAGENS SVG)
+============================================================ */
+
+.section--diferenciais .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+/* Card isolado */
+.section--diferenciais .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+/* Wrapper natural da imagem */
+.section--diferenciais .card img {
+  width: 100%;
+  max-width: 160px;      /* controla o tamanho do SVG */
+  height: 120px;         /* impede que um SVG afete o outro */
+  object-fit: contain;   /* nunca corta nem estica */
+  display: block;
+  margin-bottom: 16px;
+  flex-shrink: 0;        /* evita colapsar em layouts flex */
+}
+
+/* Título */
+.section--diferenciais .card h3 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Texto */
+.section--diferenciais .card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  max-width: 260px;
+}
 
