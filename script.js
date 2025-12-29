@@ -12,10 +12,11 @@ if (formContato) {
 }
 
 /* ==================================================
-   MENU MOBILE (HAMBÚRGUER) — DEFINITIVO
+   MENU MOBILE (HAMBÚRGUER) — CORRIGIDO
 ================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector(".mobile-menu-icon");
+  // Ajustado para o ID correto do seu HTML
+  const menuBtn = document.getElementById("mobileMenuBtn"); 
   const mobileNav = document.getElementById("mobileNav");
   const overlay = document.getElementById("mobileOverlay");
 

@@ -956,6 +956,167 @@ button[type="submit"]:hover {
   border-color: #0b5fa5;
 }
 
+/* ============================================================
+   ESTILO RODAPÉ MODERNO (RENOVADO)
+============================================================ */
+.rodape-moderno {
+  background-color: var(--azul-escuro); /* Usa a mesma cor do menu unificado */
+  color: #ffffff;
+  padding: 80px 20px 30px;
+  margin-top: 60px;
+}
+
+.rodape-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr; /* Coluna da logo um pouco maior */
+  gap: 60px;
+  padding-bottom: 50px;
+}
+
+/* Títulos das Colunas */
+.rodape-col h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Linha decorativa sob o título (estilo moderno) */
+.rodape-col h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 2px;
+  background-color: var(--azul-medio);
+}
+
+/* Coluna Branding */
+.logo-rodape {
+  max-height: 55px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1); /* Deixa a logo branca se necessário */
+}
+
+.slogan {
+  font-size: 0.95rem;
+  color: #bdc3c7;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Links de Navegação */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--azul-medio);
+  transform: translateX(5px);
+}
+
+/* Contato e Botão Portal */
+.contato-link {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+.btn-portal-footer {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: 2px solid var(--azul-medio);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-portal-footer:hover {
+  background-color: var(--azul-medio);
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Redes Sociais */
+.social-links-footer {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links-footer a {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-links-footer a:hover {
+  background-color: var(--azul-medio);
+  transform: translateY(-3px);
+}
+
+/* Copyright Bar */
+.rodape-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 25px;
+  text-align: center;
+}
+
+.rodape-bottom p {
+  font-size: 0.85rem;
+  color: #95a5a6;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 900px) {
+  .rodape-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .rodape-col h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-nav a:hover {
+    transform: none;
+  }
+  
+  .social-links-footer, .contato-link {
+    justify-content: center;
+  }
+}
 /* FOOTER */
 .kmd-chat-footer {
   padding: 10px 14px;
