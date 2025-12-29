@@ -1,63 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO BÁSICO -->
-
   <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
   <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
 
-  <!-- SEO SOCIAL (OPEN GRAPH) -->
-
+  <!-- SEO SOCIAL -->
   <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
   <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
   <meta property="og:image" content="img/og-banner.jpg">
   <meta property="og:type" content="website">
 
   <!-- FAVICON -->
-
   <link rel="icon" type="image/png" href="img/favicon.ico">
 
   <!-- PERFORMANCE -->
-
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
   <!-- FONT AWESOME -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
   <!-- CSS PRINCIPAL -->
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ==================================================
+     ESTILO EXCLUSIVO — PÁGINA GESTÃO DE RISCOS
+  ================================================== */
+  .pagina-riscos .secao {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .pagina-riscos .secao .card {
+    width: calc(25% - 24px);
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 1024px) {
+    .pagina-riscos .secao .card {
+      width: calc(50% - 24px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pagina-riscos .secao .card {
+      width: 100%;
+    }
+  }
+  </style>
 </head>
 
-<body>
+<body class="pagina-riscos">
 
+<!-- ================= HEADER ================= -->
 <header class="top-header">
   <div class="header-superior">
 
+    <div class="social-icons" aria-label="Redes sociais">
+      <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sua_conta" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:contato@komandogr.com"><i class="fas fa-envelope"></i></a>
+    </div>
 
-<div class="social-icons" aria-label="Redes sociais">
-  <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
-</div>
+    <div class="logo-area">
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
+    </div>
 
-<div class="logo-area">
-  <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
-</div>
-
-<div class="right-actions">
-  <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
-  <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
-</div>
+    <div class="right-actions">
+      <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank">PORTAL DO CLIENTE</a>
+    </div>
 
   </div>
 
-  <nav class="menu-principal" aria-label="Menu principal">
+  <nav class="menu-principal">
     <a href="index.html">Início</a>
     <a href="empresa.html">A Empresa</a>
     <a href="riscos.html">Gestão de Riscos</a>
@@ -70,119 +101,161 @@
     <a href="contato.html">Contato</a>
   </nav>
 </header>
-<style>
-/* ==================================================
-   ESTILO EXCLUSIVO — PÁGINA GESTÃO DE RISCOS
-   NÃO AFETA OUTRAS PÁGINAS
-================================================== */
 
-.pagina-riscos .secao {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 40px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-}
-
-/* Cards somente desta página */
-.pagina-riscos .secao .card {
-  width: calc(25% - 24px);
-  min-height: 340px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .pagina-riscos .secao .card {
-    width: calc(50% - 24px);
-  }
-}
-
-@media (max-width: 640px) {
-  .pagina-riscos .secao .card {
-    width: 100%;
-  }
-}
-</style>
-
-<body class="pagina-riscos">
-
-<!-- HERO -->
-<section class="hero" style="padding: 100px 40px;">
-    <h1>Gestão de Riscos no Transporte</h1>
-    <p>Monitoramento inteligente, protocolos precisos e operações 24/7 para proteger sua carga e sua operação.</p>
+<!-- ================= HERO ================= -->
+<section class="hero" style="padding:100px 40px;">
+  <h1>Gestão de Riscos no Transporte</h1>
+  <p>Monitoramento inteligente, protocolos precisos e operações 24/7 para proteger sua carga e sua operação.</p>
 </section>
 
-<!-- CONTEÚDO -->
+<!-- ================= CONTEÚDO ================= -->
 <section class="secao">
 
-    <div class="card">
-        <h3>Monitoramento 24/7</h3>
-        <p>Centro de operações ativo ininterruptamente, com equipe especializada, protocolos de segurança, análise de eventos e atuação imediata em ocorrências.</p>
-    </div>
+  <div class="card empresa-card"
+    data-title="Gestão de Riscos Komando"
+    data-full="
+A Komando tem uma visão moderna da gestão de riscos.
+Esta atividade tornou-se importante e decisiva para evitar que problemas decorrentes da falta de segurança comprometam os resultados de sua empresa.
 
-    <div class="card">
-        <h3>Inteligência Operacional</h3>
-        <p>Uso de dados, telemetria, indicadores de risco e análise preditiva para reduzir sinistros e otimizar a performance da rota.</p>
-    </div>
+A gestão de riscos é uma atividade ampla, que diz respeito a transporte de produtos, prestação de serviços, relacionamento com empregados, fornecedores e clientes, entre muitas outras.
+">
+    <h3>Gestão de Riscos Komando</h3>
+    <p>Visão moderna e estratégica da gestão de riscos.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
 
-    <div class="card">
-        <h3>Gerenciamento Embarcado</h3>
-        <p>Integração com equipamentos e tecnologias de rastreamento, comunicação e sensores avançados.</p>
-    </div>
+  <div class="card empresa-card"
+  data-title="Objetivos da Gestão de Riscos"
+  data-full='
+  <p class="texto-justificado">
+    A gestão de riscos permite que sua empresa conheça e gerencie todos os riscos inerentes
+    a atividades decisivas para a companhia.
+  </p>
 
-    <div class="card">
-        <h3>Prevenção e Compliance</h3>
-        <p>Processos rigorosos, auditorias e alinhamento total com metodologias exigidas pelo mercado de seguros.</p>
-    </div>
+  <p><strong>Inclui:</strong></p>
 
-    <div class="card">
-        <h3>Atuação em Ocorrências</h3>
-        <p>Equipes internas treinadas para resposta rápida em situações de risco, mitigando perdas e apoiando a tomada de decisão.</p>
-    </div>
+  <ul class="lista-check">
+    <li>Contratação de pessoas</li>
+    <li>Uso de veículos</li>
+    <li>Uso de rastreadores</li>
+    <li>Transporte de mercadorias e valores</li>
+    <li>Rotas em regiões específicas</li>
+    <li>Operações logísticas</li>
+    <li>Outras atividades com movimentação de produtos e serviços</li>
+  </ul>
+'>
+
+    <h3>Objetivos da Gestão de Riscos</h3>
+    <p>Controle, redução e eliminação de riscos operacionais.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
+
+  <div class="card empresa-card"
+    data-title="Monitoramento 24/7"
+    data-full="Centro de operações ativo ininterruptamente, com equipe especializada, protocolos de segurança, análise de eventos e atuação imediata em ocorrências.">
+    <h3>Monitoramento 24/7</h3>
+    <p>Centro operacional ativo 24 horas.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
+
+  <div class="card empresa-card"
+    data-title="Inteligência Operacional"
+    data-full="Uso de dados, telemetria, indicadores de risco e análise preditiva para reduzir sinistros e otimizar a performance da rota.">
+    <h3>Inteligência Operacional</h3>
+    <p>Análise preditiva e indicadores.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
+
+  <div class="card empresa-card"
+    data-title="Gerenciamento Embarcado"
+    data-full="Integração com equipamentos e tecnologias de rastreamento, comunicação e sensores avançados.">
+    <h3>Gerenciamento Embarcado</h3>
+    <p>Tecnologia integrada à operação.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
+
+  <div class="card empresa-card"
+    data-title="Prevenção e Compliance"
+    data-full="Processos rigorosos, auditorias e alinhamento total com metodologias exigidas pelo mercado de seguros.">
+    <h3>Prevenção e Compliance</h3>
+    <p>Rigor técnico e conformidade.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
+
+  <div class="card empresa-card"
+    data-title="Atuação em Ocorrências"
+    data-full="Equipes internas treinadas para resposta rápida em situações de risco, mitigando perdas e apoiando a tomada de decisão.">
+    <h3>Atuação em Ocorrências</h3>
+    <p>Resposta rápida e eficaz.</p>
+    <button class="btn-saiba-mais">Saiba mais</button>
+  </div>
 
 </section>
 
-<!-- BOTÃO DO CHAT  -->   
-    <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+<!-- ================= MODAL ================= -->
+<div id="empresaModal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Fechar">✕</button>
 
-<div class="kmd-chat" id="kmdChat" aria-hidden="true">
-  <div class="kmd-chat-header">
-    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
-    <button class="kmd-chat-close" id="kmdChatClose">×</button>
-  </div>
-  <div class="kmd-chat-body">
-    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
-    <div class="kmd-actions">
-      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
-      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
-      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
-      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
+    <div class="modal-body">
+      <h2 id="empresaModalTitle"></h2>
+      <div id="empresaModalContent"></div>
+    </div>
+
+    <div class="modal-footer">
+      <button id="empresaPrev">← Anterior</button>
+      <button id="empresaNext">Próxima →</button>
     </div>
   </div>
-  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
 </div>
 
+<!-- ================= CHAT ================= -->
+<button class="kmd-chat-toggle" id="kmdChatToggle"><i class="fas fa-headset"></i></button>
+
+<div class="kmd-chat" id="kmdChat">
+  <div class="kmd-chat-header">
+    <strong>Central de Atendimento</strong>
+    <button id="kmdChatClose">×</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
 <footer class="rodape">
   <div class="rodape-conteudo">
     <p>© 2025 — Komando GR. Todos os direitos reservados.</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/company/komando/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    </div>
   </div>
 </footer>
 
 <script src="script.js" defer></script>
 
-<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
+<script>
+const cards = Array.from(document.querySelectorAll('.empresa-card'));
+const modal = document.getElementById('empresaModal');
+const title = document.getElementById('empresaModalTitle');
+const content = document.getElementById('empresaModalContent');
+const prev = document.getElementById('empresaPrev');
+const next = document.getElementById('empresaNext');
+const close = modal.querySelector('.modal-close');
+
+let current = 0;
+
+function openModal(i) {
+  current = i;
+  const c = cards[i];
+  title.textContent = c.dataset.title;
+  content.innerHTML = c.dataset.full
+    .trim().split('\n')
+    .filter(t => t.trim())
+    .map(t => `<p>${t}</p>`).join('');
+  modal.classList.add('show');
+  document.documentElement.style.overflow = 'hidden';
+}
+
+cards.forEach((c,i)=>c.querySelector('.btn-saiba-mais').onclick=()=>openModal(i));
+prev.onclick=()=>current>0&&openModal(current-1);
+next.onclick=()=>current<cards.length-1&&openModal(current+1);
+close.onclick=()=>{modal.classList.remove('show');document.documentElement.style.overflow='';};
+</script>
 
 </body>
 </html>
