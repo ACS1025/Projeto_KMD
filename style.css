@@ -23,23 +23,45 @@ body {
    HEADER SUPERIOR
 ============================================================ */
 
+/* 1. Unificando a cor do topo */
 .top-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  background: var(--azul-escuro); /* Trocamos azul-medio por azul-escuro */
   z-index: 1000;
+  box-shadow: none; /* Remove sombras que marquem a divisão */
 }
 
+/* 2. Deixando o conteúdo interno transparente para herdar a cor acima */
 .header-superior {
+  max-width: 1300px;
+  margin: auto;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 12px 24px;
-  background: var(--azul-medio);
+  position: relative;
+  height: 80px; 
+  box-sizing: border-box;
+  background: transparent; /* Garante que não haja sobreposição de cor */
 }
 
+/* 3. Garantindo que o menu use a mesma cor exata */
+.menu-principal {
+  position: fixed;
+  top: 80px; 
+  left: 0;
+  width: 100%;
+  background: var(--azul-escuro);
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 14px 0;
+  z-index: 999;
+  border: none; /* Remove qualquer borda que separe as barras */
+}
 /* Redes sociais */
 .social-icons {
   display: flex;
@@ -88,15 +110,16 @@ body {
 
 .menu-principal {
   position: fixed;
-  top: 88px; /* altura real do header */
+  top: 70px; /* Reduzi de 88px para 80px para fechar o vão */
   left: 0;
   width: 100%;
   background: var(--azul-escuro);
   display: flex;
   justify-content: center;
-  gap: 28px;
-  padding: 14px 20px;
+  gap: 32px;
+  padding: 14px 0;
   z-index: 999;
+  border-top: 1px solid rgba(255,255,255,0.1); /* Opcional: linha sutil para separar */
 }
 
 .menu-principal a {
@@ -1621,7 +1644,7 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--azul-medio);
+  background: var(--azul-escuro);
   z-index: 1000;
 }
 
@@ -1633,6 +1656,8 @@ html, body {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  height: 80px; /* Forçamos a altura para casar com o 'top' do menu acima */
+  box-sizing: border-box;
 }
 
 /* Logo centralizada */
@@ -1790,3 +1815,5 @@ body {
 body {
   padding-top: 0;
 }
+
+
