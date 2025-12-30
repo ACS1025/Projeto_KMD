@@ -1,57 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Diferenciais – Sentinela GR</title>
-  <meta name="description" content="Conheça os diferenciais que tornam a Sentinela GR uma referência em monitoramento, segurança logística e gestão de riscos.">
+  <!-- SEO BÁSICO -->
 
-  <meta property="og:title" content="Diferenciais – Sentinela GR">
-  <meta property="og:description" content="Tecnologia, atendimento, expertise operacional e performance aplicada à segurança logística.">
+  <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
+  <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
+
+  <!-- SEO SOCIAL (OPEN GRAPH) -->
+
+  <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
+  <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
+  <meta property="og:image" content="img/og-banner.jpg">
   <meta property="og:type" content="website">
 
-  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- FAVICON -->
+
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+
+  <!-- PERFORMANCE -->
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- CSS PRINCIPAL -->
+
   <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
 
 <header class="top-header">
   <div class="header-superior">
 
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:contato@sentinelagr.com"><i class="fas fa-envelope"></i></a>
+    <div class="social-icons" aria-label="Redes sociais">
+      <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:atendimento@komando.com.br" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
     </div>
 
     <div class="logo-area">
-      <a href="index.html">
-        <img src="logo.png" alt="Sentinela GR - Logotipo" class="logo-img">
-      </a>
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
     </div>
 
     <div class="right-actions">
-      <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank">PORTAL DO CLIENTE</a>
+      <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
+        PORTAL DO CLIENTE
+      </a>
     </div>
 
-  </div>
+    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-  <nav class="menu-principal">
-    <a href="empresa.html">A Empresa</a>
-    <a href="riscos.html">Gestão de Riscos</a>
-    <a href="supply.html">Supply Chain</a>
-    <a href="projetos-especiais.html">Projetos</a>
-    <a href="clients.html">Clientes</a>
-    <a href="cases.html">Cases</a>
-    <a href="diferenciais.html" class="ativo">Diferenciais</a>
-    <a href="equipe.html">Equipe</a>
-    <a href="contato.html">Contato</a>
-  </nav>
+  </div>
 </header>
+
+<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
+<nav class="menu-principal" aria-label="Menu principal">
+  <a href="empresa.html">A Empresa</a>
+  <a href="riscos.html">Gestão de Riscos</a>
+  <a href="supply.html">Supply Chain</a>
+  <a href="projetos-especiais.html">Projetos</a>
+  <a href="clients.html">Clientes</a>
+  <a href="cases.html">Cases</a>
+  <a href="diferenciais.html">Diferenciais</a>
+  <a href="equipe.html">Equipe</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+<!-- MENU MOBILE -->
+<nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+  <a href="empresa.html">A Empresa</a>
+  <a href="riscos.html">Gestão de Riscos</a>
+  <a href="supply.html">Supply Chain</a>
+  <a href="projetos-especiais.html">Projetos</a>
+  <a href="clients.html">Clientes</a>
+  <a href="cases.html">Cases</a>
+  <a href="diferenciais.html">Diferenciais</a>
+  <a href="equipe.html">Equipe</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+<div id="mobileOverlay" aria-hidden="true"></div>
+
+
+<section class="hero">
+  <div class="hero-content">
+    <h1></h1>
+    <p></p>
+    <a class="btn" href="#contato">Solicitar Proposta</a>
+  </div>
+</section>
 
 <section class="topo-pagina">
   <h1>Diferenciais</h1>
@@ -99,18 +156,69 @@
 </section>
 
 
-<footer class="rodape">
-  <div class="rodape-conteudo">
-    <p>© 2025 — Sentinela GR. Todos os direitos reservados.</p>
 
-    <div class="social-links">
-      <a href="#">🔗</a>
-      <a href="#">📸</a>
-      <a href="#">📘</a>
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
+  <div class="kmd-chat-header">
+    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
+    <button class="kmd-chat-close" id="kmdChatClose">×</button>
+  </div>
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
+      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
+  </div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+</div>
+
+<footer class="rodape-moderno">
+  <div class="rodape-container">
+    
+    <div class="rodape-col branding">
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-rodape">
+      <p class="slogan">Excelência em Gerenciamento de Riscos e Logística integrada.</p>
+      <div class="social-links-footer">
+        <a href="https://www.linkedin.com/company/komando/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/komandogroficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    
+    <div class="rodape-col">
+      <h3>Acesso Rápido</h3>
+      <nav class="footer-nav">
+        <a href="empresa.html">A Empresa</a>
+        <a href="riscos.html">Gestão de Riscos</a>
+        <a href="supply.html">Supply Chain</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+
+    <div class="rodape-col">
+      <h3>Fale Conosco</h3>
+      <a href="mailto:atendimento@komando.com.br" class="contato-link">
+        <i class="fas fa-envelope"></i> atendimento@komando.com.br
+      </a>
+      <div class="portal-wrapper">
+        <a href="http://vstrack.ddns.net/komando/" class="btn-portal-footer" target="_blank">
+          PORTAL DO CLIENTE
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rodape-bottom">
+    <p>© 2025 Komando GR — Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script src="script.js" defer></script>
+
 </body>
 </html>
