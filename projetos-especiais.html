@@ -37,27 +37,40 @@
 <header class="top-header">
   <div class="header-superior">
 
+    <div class="social-icons" aria-label="Redes sociais">
+      <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:atendimento@komando.com.br" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+    </div>
 
-<div class="social-icons" aria-label="Redes sociais">
-  <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
-</div>
+    <div class="logo-area">
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
+    </div>
 
-<div class="logo-area">
-  <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
-</div>
+    <div class="right-actions">
+      <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
+        PORTAL DO CLIENTE
+      </a>
+    </div>
 
-<div class="right-actions">
-  <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
-  <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
-</div>
+    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
   </div>
+</header>
 
-  <nav class="menu-principal" aria-label="Menu principal">
+<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
+<nav class="menu-principal" aria-label="Menu principal">
     <a href="index.html">Início</a>
     <a href="empresa.html">A Empresa</a>
     <a href="riscos.html">Gestão de Riscos</a>
@@ -68,7 +81,23 @@
     <a href="diferenciais.html">Diferenciais</a>
     <a href="equipe.html">Equipe</a>
     <a href="contato.html">Contato</a>
-  </nav>
+</nav>
+
+<!-- MENU MOBILE -->
+<nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
+</nav>
+
+<div id="mobileOverlay" aria-hidden="true"></div>
 </header>
 <style>
 /* ==================================================
@@ -149,7 +178,7 @@
 </section>
 
 <!-- BOTÃO DO CHAT  -->   
-    <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
 <div class="kmd-chat" id="kmdChat" aria-hidden="true">
   <div class="kmd-chat-header">
@@ -165,7 +194,7 @@
       <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
   </div>
-  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
 </div>
 
 <footer class="rodape-moderno">
@@ -211,8 +240,6 @@
 </footer>
 
 <script src="script.js" defer></script>
-
-<script> const toggle = document.getElementById('kmdChatToggle'); const chat = document.getElementById('kmdChat'); const close = document.getElementById('kmdChatClose'); toggle.onclick = () => chat.classList.toggle('show'); close.onclick = () => chat.classList.remove('show'); </script>
 
 </body>
 </html>

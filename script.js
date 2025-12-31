@@ -130,46 +130,32 @@ document.addEventListener("keydown", (e) => {
 });
 
 /* ==================================================
-   CENTRAL DE ATENDIMENTO
-================================================== */
-const btnAtendimento = document.getElementById("btnAtendimento");
-const modalAtendimento = document.getElementById("modalAtendimento");
-const fecharAtendimento = document.getElementById("fecharAtendimento");
-
-btnAtendimento?.addEventListener("click", () => {
-  modalAtendimento.classList.add("show");
-  modalAtendimento.setAttribute("aria-hidden", "false");
-});
-
-fecharAtendimento?.addEventListener("click", () => {
-  modalAtendimento.classList.remove("show");
-  modalAtendimento.setAttribute("aria-hidden", "true");
-});
-
-modalAtendimento?.addEventListener("click", (e) => {
-  if (e.target === modalAtendimento) {
-    modalAtendimento.classList.remove("show");
-    modalAtendimento.setAttribute("aria-hidden", "true");
-  }
-});
-
-/* ==================================================
-   CHAT FLUTUANTE — KOMANDO GR
+   CHAT FLUTUANTE — CENTRAL DE ATENDIMENTO (Consolidado)
 ================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("kmdChatToggle");
-  const chat = document.getElementById("kmdChat");
-  const close = document.getElementById("kmdChatClose");
+  const toggle = document.getElementById("kmdChatToggle"); // O botão redondo azul
+  const chat = document.getElementById("kmdChat");         // A janela do chat
+  const close = document.getElementById("kmdChatClose");   // O 'x' de fechar
 
   if (!toggle || !chat || !close) return;
 
+  // Função para abrir/fechar
   toggle.addEventListener("click", () => {
     chat.classList.toggle("show");
-    chat.setAttribute("aria-hidden", !chat.classList.contains("show"));
+    const isOpen = chat.classList.contains("show");
+    chat.setAttribute("aria-hidden", !isOpen);
   });
 
+  // Função para fechar no botão 'X'
   close.addEventListener("click", () => {
     chat.classList.remove("show");
     chat.setAttribute("aria-hidden", "true");
+  });
+
+  // Fechar ao clicar fora do chat (opcional, melhora a experiência)
+  document.addEventListener("click", (e) => {
+    if (!chat.contains(e.target) && !toggle.contains(e.target)) {
+      chat.classList.remove("show");
+    }
   });
 });

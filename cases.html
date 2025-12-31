@@ -1,46 +1,85 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO BÁSICO -->
-
-  <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
+  
+  <title>Cases de Sucesso – Komando GR</title>
   <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
-
-  <!-- SEO SOCIAL (OPEN GRAPH) -->
 
   <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
   <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
   <meta property="og:image" content="img/og-banner.jpg">
   <meta property="og:type" content="website">
 
-  <!-- FAVICON -->
-
   <link rel="icon" type="image/png" href="img/favicon.ico">
 
-  <!-- PERFORMANCE -->
-
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-
-  <!-- FONT AWESOME -->
-
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-
-  <!-- CSS PRINCIPAL -->
-
+  
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    /* Estilos para valorizar a página de Cases */
+    .secao-cases-v2 {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .case-card-v2 {
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      padding: 35px;
+      margin-bottom: 30px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      border-left: 6px solid #b22222;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .case-card-v2:hover { transform: translateY(-5px); box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+
+    .case-icon-v2 {
+      font-size: 3.2rem;
+      color: #b22222;
+      margin-right: 40px;
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .case-info-v2 { flex: 1; }
+    .case-info-v2 h3 { font-size: 1.7rem; margin-bottom: 10px; color: #1a1a1a; font-weight: 700; }
+    .case-info-v2 p { color: #555; line-height: 1.6; margin-bottom: 15px; font-size: 1.05rem; }
+
+    .badge-resultado {
+      display: inline-block;
+      background: #f8f8f8;
+      color: #b22222;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      border: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .case-card-v2 { flex-direction: column; text-align: center; padding: 30px 20px; }
+      .case-icon-v2 { margin-right: 0; margin-bottom: 20px; }
+    }
+  </style>
 </head>
 
-<body>
+<body class="pagina-cases">
 
 <header class="top-header">
   <div class="header-superior">
-
     <div class="social-icons" aria-label="Redes sociais">
       <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -60,98 +99,122 @@
       </a>
     </div>
 
-    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
-    <button
-      class="mobile-menu-btn"
-      id="mobileMenuBtn"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-    >
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
-
   </div>
 </header>
 
-<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
 <nav class="menu-principal" aria-label="Menu principal">
-  <a href="empresa.html">A Empresa</a>
-  <a href="riscos.html">Gestão de Riscos</a>
-  <a href="supply.html">Supply Chain</a>
-  <a href="projetos-especiais.html">Projetos</a>
-  <a href="clients.html">Clientes</a>
-  <a href="cases.html">Cases</a>
-  <a href="diferenciais.html">Diferenciais</a>
-  <a href="equipe.html">Equipe</a>
-  <a href="contato.html">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
 </nav>
 
-<!-- MENU MOBILE -->
 <nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
-  <a href="empresa.html">A Empresa</a>
-  <a href="riscos.html">Gestão de Riscos</a>
-  <a href="supply.html">Supply Chain</a>
-  <a href="projetos-especiais.html">Projetos</a>
-  <a href="clients.html">Clientes</a>
-  <a href="cases.html">Cases</a>
-  <a href="diferenciais.html">Diferenciais</a>
-  <a href="equipe.html">Equipe</a>
-  <a href="contato.html">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
 </nav>
 
 <div id="mobileOverlay" aria-hidden="true"></div>
-
-
-<section class="hero">
-  <div class="hero-content">
-    <h1></h1>
-    <p></p>
-    <a class="btn" href="#contato">Solicitar Proposta</a>
-  </div>
-</section>
 
 <section class="topo-pagina">
   <h1>Cases de Sucesso</h1>
   <p>Resultados reais obtidos com tecnologia, estratégia e inteligência operacional.</p>
 </section>
 
-
-<!-- ======= LISTA DE CASES ======= -->
-<section class="secao-extra">
-
-  <div class="case-grid">
-
-    <div class="case-card">
+<section class="secao-cases-v2">
+  
+  <div class="case-card-v2 empresa-card" 
+       data-title="Redução de 68% em Tentativas de Roubo" 
+       data-full="Neste case envolvendo transporte de eletroeletrônicos, a Komando GR implementou um ecossistema de segurança ativa. Através da análise preditiva de inteligência e revisão de rotas em pontos críticos, conseguimos neutralizar ações criminosas antes do sinistro ocorrer. O uso de escolta velada e monitoramento redundante resultou em uma queda de 68% nas tentativas de roubo, gerando economia direta no prêmio do seguro e garantindo a continuidade da operação.">
+    <div class="case-icon-v2"><i class="fas fa-shield-virus"></i></div>
+    <div class="case-info-v2">
+      <span class="badge-resultado">SEGURANÇA ATIVA</span>
       <h3>Redução de 68% em Tentativas de Roubo</h3>
-      <p>
-        Implementação de monitoramento ativo, análise preditiva e revisão de rotas resultou em
-        forte queda de ocorrências em uma grande operação de transporte de eletroeletrônicos.
-      </p>
+      <p>Implementação de análise preditiva e revisão estratégica de rotas em zonas críticas.</p>
+      <button class="btn-saiba-mais">Saiba mais</button>
     </div>
-
-    <div class="case-card">
-      <h3>95% de Recuperação em Operação Crítica</h3>
-      <p>
-        Ação coordenada entre nossa central, transportadora e forças policiais garantiu a
-        recuperação total da carga – sem avarias.
-      </p>
-    </div>
-
-    <div class="case-card">
-      <h3>Performance Logística ↑ 22%</h3>
-      <p>
-        Com uso de telemetria, dashboards operacionais e auditorias de processo, ajudamos um
-        cliente nacional a otimizar sua cadeia logística.
-      </p>
-    </div>
-
   </div>
+
+  <div class="case-card-v2 empresa-card" 
+       data-title="95% de Recuperação em Operação Crítica" 
+       data-full="A agilidade da Central de Monitoramento Komando foi o fator decisivo. Ao detectar um desvio de rota não programado, o protocolo de pronta resposta foi ativado em menos de 60 segundos. A ação coordenada entre nossa equipe técnica, a transportadora e as forças policiais resultou na localização e recuperação total da carga de alto valor agregado, sem avarias no patrimônio ou riscos ao condutor.">
+    <div class="case-icon-v2"><i class="fas fa-satellite-dish"></i></div>
+    <div class="case-info-v2">
+      <span class="badge-resultado">PRONTA RESPOSTA</span>
+      <h3>95% de Recuperação em Operação Crítica</h3>
+      <p>Ação coordenada imediata entre Central 24h e Forças Policiais.</p>
+      <button class="btn-saiba-mais">Saiba mais</button>
+    </div>
+  </div>
+
+  <div class="case-card-v2 empresa-card" 
+       data-title="Performance Logística ↑ 22%" 
+       data-full="Utilizando tecnologia de telemetria avançada integrada a dashboards operacionais em tempo real, ajudamos um cliente de abrangência nacional a otimizar sua frota. Através de auditorias de processos e treinamento de dirigibilidade econômica, reduzimos o tempo de ociosidade e o consumo de combustível, elevando a performance logística geral em 22% logo no primeiro semestre de implementação.">
+    <div class="case-icon-v2"><i class="fas fa-tachometer-alt"></i></div>
+    <div class="case-info-v2">
+      <span class="badge-resultado">EFICIÊNCIA OPERACIONAL</span>
+      <h3>Performance Logística ↑ 22%</h3>
+      <p>Otimização de custos e produtividade através de telemetria e auditoria de processos.</p>
+      <button class="btn-saiba-mais">Saiba mais</button>
+    </div>
+  </div>
+
 </section>
 
+<div id="empresaModal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close">✕</button>
+    <div class="modal-body">
+      <h2 id="empresaModalTitle"></h2>
+      <div id="empresaModalContent"></div>
+    </div>
+    <div class="modal-footer">
+      <div class="nav-buttons">
+        <button id="empresaPrev">← Anterior</button>
+        <button id="empresaNext">Próxima →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
+  <div class="kmd-chat-header">
+    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
+    <button class="kmd-chat-close" id="kmdChatClose">×</button>
+  </div>
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
+      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
+    </div>
+  </div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
+</div>
 
 <footer class="rodape-moderno">
   <div class="rodape-container">
-    
     <div class="rodape-col branding">
       <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-rodape">
       <p class="slogan">Excelência em Gerenciamento de Riscos e Logística integrada.</p>
@@ -161,7 +224,6 @@
         <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
-    
     <div class="rodape-col">
       <h3>Acesso Rápido</h3>
       <nav class="footer-nav">
@@ -171,27 +233,53 @@
         <a href="contato.html">Contato</a>
       </nav>
     </div>
-
     <div class="rodape-col">
       <h3>Fale Conosco</h3>
       <a href="mailto:atendimento@komando.com.br" class="contato-link">
         <i class="fas fa-envelope"></i> atendimento@komando.com.br
       </a>
       <div class="portal-wrapper">
-        <a href="http://vstrack.ddns.net/komando/" class="btn-portal-footer" target="_blank">
-          PORTAL DO CLIENTE
-        </a>
+        <a href="http://vstrack.ddns.net/komando/" class="btn-portal-footer" target="_blank">PORTAL DO CLIENTE</a>
       </div>
     </div>
-
   </div>
-
   <div class="rodape-bottom">
     <p>© 2025 Komando GR — Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script src="script.js" defer></script>
+<script>
+(function() {
+  const cardsS = Array.from(document.querySelectorAll('.empresa-card'));
+  const modalS = document.getElementById('empresaModal');
+  const titleS = document.getElementById('empresaModalTitle');
+  const contentS = document.getElementById('empresaModalContent');
+  const prevS = document.getElementById('empresaPrev');
+  const nextS = document.getElementById('empresaNext');
+  const closeS = modalS.querySelector('.modal-close');
+  let currentS = 0;
+
+  function openModalS(i) {
+    currentS = i;
+    const c = cardsS[i];
+    titleS.textContent = c.dataset.title;
+    contentS.innerHTML = `<p>${c.dataset.full}</p>`;
+    modalS.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    prevS.disabled = (i === 0);
+    nextS.disabled = (i === cardsS.length - 1);
+  }
+
+  cardsS.forEach((c, i) => {
+    c.querySelector('.btn-saiba-mais').onclick = () => openModalS(i);
+  });
+
+  prevS.onclick = () => currentS > 0 && openModalS(currentS - 1);
+  nextS.onclick = () => currentS < cardsS.length - 1 && openModalS(currentS + 1);
+  closeS.onclick = () => { modalS.classList.remove('show'); document.body.style.overflow = ''; };
+  modalS.onclick = (e) => { if(e.target === modalS) closeS.onclick(); };
+})();
+</script>
 </body>
 </html>
-

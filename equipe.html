@@ -1,46 +1,137 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO BÁSICO -->
-
-  <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
-  <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
-
-  <!-- SEO SOCIAL (OPEN GRAPH) -->
+  <title>Nossa Equipe – Komando GR</title>
+  <meta name="description" content="Conheça os especialistas por trás da inteligência e segurança da Komando GR.">
 
   <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
   <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
   <meta property="og:image" content="img/og-banner.jpg">
   <meta property="og:type" content="website">
 
-  <!-- FAVICON -->
-
   <link rel="icon" type="image/png" href="img/favicon.ico">
-
-  <!-- PERFORMANCE -->
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-
-  <!-- FONT AWESOME -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
-  <!-- CSS PRINCIPAL -->
-
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    /* AJUSTES ESPECÍFICOS PARA ESTA PÁGINA */
+    
+    /* 1. Espaçamento para não sumir sob a barra fixa */
+    .topo-pagina {
+      padding-top: 180px; 
+      padding-bottom: 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .topo-pagina h1 {
+      font-size: 2.8rem;
+      color: #1a3a5a;
+      margin-bottom: 15px;
+    }
+
+    /* 2. Grid da Equipe */
+    .secao-equipe {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .membro-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      text-align: center;
+      border-bottom: 5px solid #1a3a5a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .membro-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .membro-foto {
+      width: 100%;
+      height: 250px;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .membro-foto i {
+      font-size: 5rem;
+      color: #dee2e6;
+    }
+
+    .membro-info {
+      padding: 25px;
+      flex-grow: 1;
+    }
+
+    .membro-info span {
+      display: block;
+      color: #1a3a5a;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .membro-info h3 {
+      font-size: 1.4rem;
+      color: #1a3a5a;
+      margin-bottom: 12px;
+    }
+
+    .mini-curriculo {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .membro-redes {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: auto;
+    }
+
+    .membro-redes a {
+      color: #1a3a5a;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .membro-redes a:hover {
+      color: #1a3a5a;
+    }
+
+    @media (max-width: 768px) {
+      .topo-pagina { padding-top: 160px; }
+      .secao-equipe { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="top-header">
   <div class="header-superior">
-
     <div class="social-icons" aria-label="Redes sociais">
       <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -55,25 +146,15 @@
 
     <div class="right-actions">
       <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
-      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
-        PORTAL DO CLIENTE
-      </a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
     </div>
 
-    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
-    <button
-      class="mobile-menu-btn"
-      id="mobileMenuBtn"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-    >
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
-
   </div>
 </header>
 
-<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
 <nav class="menu-principal" aria-label="Menu principal">
   <a href="empresa.html">A Empresa</a>
   <a href="riscos.html">Gestão de Riscos</a>
@@ -86,7 +167,6 @@
   <a href="contato.html">Contato</a>
 </nav>
 
-<!-- MENU MOBILE -->
 <nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
   <a href="empresa.html">A Empresa</a>
   <a href="riscos.html">Gestão de Riscos</a>
@@ -101,16 +181,59 @@
 
 <div id="mobileOverlay" aria-hidden="true"></div>
 
-
-<section class="hero">
-  <div class="hero-content">
-    <h1></h1>
-    <p></p>
-    <a class="btn" href="#contato">Solicitar Proposta</a>
-  </div>
+<section class="topo-pagina">
+  <h1>Nossa Equipe</h1>
+  <p>Liderança e expertise técnica dedicadas a proteger sua operação logística em cada quilômetro.</p>
 </section>
 
+<section class="secao-equipe">
+  
+  <div class="membro-card">
+    <div class="membro-foto"><i class="fas fa-user-tie"></i></div>
+    <div class="membro-info">
+      <span>Diretoria Executiva</span>
+      <h3>Nome do Diretor</h3>
+      <p class="mini-curriculo">
+        Especialista em Gestão de Riscos com 20 anos de mercado. Pós-graduado em Logística Estratégica e focado em soluções de segurança de alta tecnologia.
+      </p>
+      <div class="membro-redes">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
 
+  <div class="membro-card">
+    <div class="membro-foto"><i class="fas fa-user-shield"></i></div>
+    <div class="membro-info">
+      <span>Gerente Operacional</span>
+      <h3>Nome do Gestor</h3>
+      <p class="mini-curriculo">
+        Especialista em pronta resposta e gerenciamento de crises. Coordena nossa central 24h garantindo o cumprimento rigoroso dos protocolos.
+      </p>
+      <div class="membro-redes">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="membro-card">
+    <div class="membro-foto"><i class="fas fa-user-cog"></i></div>
+    <div class="membro-info">
+      <span>Inteligência de Dados</span>
+      <h3>Nome do Analista</h3>
+      <p class="mini-curriculo">
+        Focado em telemetria avançada e dashboards de performance. Transforma dados operacionais em decisões estratégicas para nossos clientes.
+      </p>
+      <div class="membro-redes">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
@@ -128,7 +251,7 @@
       <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
   </div>
-  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
 </div>
 
 <footer class="rodape-moderno">

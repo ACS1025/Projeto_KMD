@@ -1,46 +1,160 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO BÁSICO -->
-
-  <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
-  <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
-
-  <!-- SEO SOCIAL (OPEN GRAPH) -->
-
-  <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
-  <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
-  <meta property="og:image" content="img/og-banner.jpg">
-  <meta property="og:type" content="website">
-
-  <!-- FAVICON -->
+  <title>Contato – Komando GR</title>
+  <meta name="description" content="Entre em contato com a Komando GR para soluções personalizadas em gerenciamento de riscos.">
 
   <link rel="icon" type="image/png" href="img/favicon.ico">
-
-  <!-- PERFORMANCE -->
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-
-  <!-- FONT AWESOME -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-
-  <!-- CSS PRINCIPAL -->
-
   <link rel="stylesheet" href="style.css">
 
+  <style>
+    /* AJUSTES PARA A PÁGINA DE CONTATO */
+    
+    .topo-pagina {
+      padding-top: 180px; 
+      padding-bottom: 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .secao-contato {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 50px;
+    }
+
+    /* Cards Laterais (Canais Rápidos) */
+    .contato-canais {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .canal-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #4169ec;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .canal-card:hover { transform: translateX(10px); }
+
+    .canal-card i {
+      font-size: 1.8rem;
+      color: #4169ec;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .canal-card h3 { font-size: 1.2rem; color: #1a3a5a; margin-bottom: 5px; }
+    .canal-card p { font-size: 0.9rem; color: #666; }
+
+    /* Formulário */
+    .contato-form-wrapper {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+    
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .btn-enviar {
+      background: #1a3a5a;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+
+    .btn-enviar:hover { background: #1a3a5a; }
+
+    @media (max-width: 992px) {
+      .secao-contato { grid-template-columns: 1fr; }
+      .topo-pagina { padding-top: 160px; }
+    }
+
+    /* Estilos do Pop-up */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: white;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.show .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #999;
+}
+  </style>
 </head>
 
 <body>
 
 <header class="top-header">
   <div class="header-superior">
-
     <div class="social-icons" aria-label="Redes sociais">
       <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -48,69 +162,115 @@
       <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
       <a href="mailto:atendimento@komando.com.br" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
     </div>
-
     <div class="logo-area">
       <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
     </div>
-
     <div class="right-actions">
       <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
-      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
-        PORTAL DO CLIENTE
-      </a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
     </div>
-
-    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
-    <button
-      class="mobile-menu-btn"
-      id="mobileMenuBtn"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
   </div>
 </header>
 
-<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
 <nav class="menu-principal" aria-label="Menu principal">
-  <a href="empresa.html">A Empresa</a>
-  <a href="riscos.html">Gestão de Riscos</a>
-  <a href="supply.html">Supply Chain</a>
-  <a href="projetos-especiais.html">Projetos</a>
-  <a href="clients.html">Clientes</a>
-  <a href="cases.html">Cases</a>
-  <a href="diferenciais.html">Diferenciais</a>
-  <a href="equipe.html">Equipe</a>
-  <a href="contato.html">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
 </nav>
 
-<!-- MENU MOBILE -->
 <nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
-  <a href="empresa.html">A Empresa</a>
-  <a href="riscos.html">Gestão de Riscos</a>
-  <a href="supply.html">Supply Chain</a>
-  <a href="projetos-especiais.html">Projetos</a>
-  <a href="clients.html">Clientes</a>
-  <a href="cases.html">Cases</a>
-  <a href="diferenciais.html">Diferenciais</a>
-  <a href="equipe.html">Equipe</a>
-  <a href="contato.html">Contato</a>
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
 </nav>
 
 <div id="mobileOverlay" aria-hidden="true"></div>
 
-
-<section class="hero">
-  <div class="hero-content">
-    <h1></h1>
-    <p></p>
-    <a class="btn" href="#contato">Solicitar Proposta</a>
-  </div>
+<section class="topo-pagina">
+  <h1>Fale Conosco</h1>
+  <p>Escolha o canal mais adequado para sua necessidade ou envie uma mensagem rápida pelo formulário.</p>
 </section>
 
+<section class="secao-contato">
+  
+  <div class="contato-canais">
+    <a href="https://wa.me/5519981260767" class="canal-card" target="_blank">
+      <i class="fas fa-chart-line"></i>
+      <h3>Comercial e Vendas</h3>
+      <p>Solicite propostas e conheça nossos planos personalizados.</p>
+    </a>
 
+    <a href="https://wa.me/5519981260767" class="canal-card" target="_blank">
+      <i class="fas fa-truck"></i>
+      <h3>Suporte ao Motorista</h3>
+      <p>Atendimento rápido para quem está na rota agora.</p>
+    </a>
+
+    <a href="mailto:rh@komandogr.com" class="canal-card">
+      <i class="fas fa-briefcase"></i>
+      <h3>Trabalhe Conosco</h3>
+      <p>Envie seu currículo e venha fazer parte do nosso time.</p>
+    </a>
+  </div>
+
+  <div class="contato-form-wrapper">
+    <form action="#">
+      <div class="form-group">
+        <label>Seu Nome</label>
+        <input type="text" placeholder="Ex: João Silva" required>
+      </div>
+      <div class="form-group">
+        <label>E-mail Corporativo</label>
+        <input type="email" placeholder="nome@empresa.com.br" required>
+      </div>
+      <div class="form-group">
+        <label>Assunto</label>
+        <select required>
+          <option value="">Selecione um assunto</option>
+          <option value="vendas">Quero contratar a Komando</option>
+          <option value="suporte">Suporte Técnico</option>
+          <option value="financeiro">Financeiro</option>
+          <option value="outros">Outros assuntos</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea rows="5" placeholder="Como podemos ajudar?"></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">ENVIAR MENSAGEM</button>
+    </form>
+  </div>
+
+</section>
+
+<div id="modalObrigado" class="modal-overlay">
+  <div class="modal-card" style="text-align: center; padding: 40px;">
+    <button class="modal-close" id="fecharModal">✕</button>
+    <div class="icone-sucesso" style="font-size: 4rem; color: #28a745; margin-bottom: 20px;">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h2 style="color: #1a3a5a; margin-bottom: 15px;">Mensagem Enviada!</h2>
+    <p style="color: #666; line-height: 1.6; margin-bottom: 25px;">
+      Agradecemos seu contato. Nossa equipe retornará em breve.
+    </p>
+    <button class="btn-enviar" onclick="document.getElementById('modalObrigado').classList.remove('show')">OK</button>
+  </div>
+</div>
 
 <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
@@ -128,7 +288,7 @@
       <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
   </div>
-  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
 </div>
 
 <footer class="rodape-moderno">
@@ -173,7 +333,18 @@
   </div>
 </footer>
 
-<script src="script.js" defer></script>
+<script>
+  document.querySelector('.contato-form-wrapper form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede a página de recarregar
+    document.getElementById('modalObrigado').classList.add('show'); // Mostra o pop-up
+    this.reset(); // Limpa os campos do formulário
+  });
 
+  document.getElementById('fecharModal').onclick = function() {
+    document.getElementById('modalObrigado').classList.remove('show');
+  };
+</script>
+
+<script src="script.js" defer></script>
 </body>
 </html>

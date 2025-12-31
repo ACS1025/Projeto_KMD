@@ -1,33 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO BÁSICO -->
-
   <title>Komando GR – Excelência em Gerenciamento de Riscos</title>
   <meta name="description" content="Gerenciamento de riscos, monitoramento 24h, supply chain e soluções de segurança para operações logísticas em todo o Brasil.">
-
-  <!-- SEO SOCIAL (OPEN GRAPH) -->
 
   <meta property="og:title" content="Komando GR – Excelência em Gerenciamento de Riscos">
   <meta property="og:description" content="Soluções de monitoramento, rastreamento e segurança logística 24h.">
   <meta property="og:image" content="img/og-banner.jpg">
   <meta property="og:type" content="website">
 
-  <!-- FAVICON -->
-
   <link rel="icon" type="image/png" href="img/favicon.ico">
-
-  <!-- PERFORMANCE -->
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-  <!-- FONT AWESOME -->
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-
-  <!-- CSS PRINCIPAL -->
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,28 +26,32 @@
 
 <header class="top-header">
   <div class="header-superior">
+    <div class="social-icons" aria-label="Redes sociais">
+      <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="mailto:atendimento@komando.com.br" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+    </div>
 
+    <div class="logo-area">
+      <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
+    </div>
 
-<div class="social-icons" aria-label="Redes sociais">
-  <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
-</div>
+    <div class="right-actions">
+      <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
+        PORTAL DO CLIENTE
+      </a>
+    </div>
 
-<div class="logo-area">
-  <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
-</div>
-
-<div class="right-actions">
-  <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
-  <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">PORTAL DO CLIENTE</a>
-</div>
-
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
+</header>
 
-  <nav class="menu-principal" aria-label="Menu principal">
+<nav class="menu-principal" aria-label="Menu principal">
     <a href="index.html">Início</a>
     <a href="empresa.html">A Empresa</a>
     <a href="riscos.html">Gestão de Riscos</a>
@@ -68,105 +62,71 @@
     <a href="diferenciais.html">Diferenciais</a>
     <a href="equipe.html">Equipe</a>
     <a href="contato.html">Contato</a>
-  </nav>
-</header>
+</nav>
 
-<!-- HERO -->
+<nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
+</nav>
+
+<div id="mobileOverlay" aria-hidden="true"></div>
+
 <section class="hero" style="padding:100px 40px;">
   <h1>Sobre a KMD</h1>
   <p>Inovação, tecnologia e inteligência operacional para o transporte e a logística.</p>
 </section>
 
-<!-- CONTEÚDO -->
 <section class="secao empresa-cards">
-
-  <article class="card empresa-card"
-    data-title="Quem Somos"
-    data-full="
-A KMD é uma empresa especializada em gestão de riscos, proteção logística, inteligência operacional e suporte estratégico para operações de transporte em todo o Brasil.
-
-Com mais de uma década no mercado de gestão de riscos, a KMD atua de forma totalmente independente de seguradoras e corretoras, garantindo isenção técnica e foco absoluto no melhor resultado para seus clientes.
-
-Sediada em São Paulo, a empresa está conectada aos principais provedores de telecomunicações e rastreamento de frotas e cargas, assegurando alto padrão de qualidade e eficiência operacional em todo o Brasil e Mercosul.
-
-Mais do que fornecer serviços, a KMD atua como consultoria estratégica, desenvolvendo soluções personalizadas e construindo relações sólidas e de longo prazo.">
-
+  <article class="card empresa-card" data-title="Quem Somos" data-full="A KMD é uma empresa especializada em gestão de riscos, proteção logística, inteligência operacional e suporte estratégico para operações de transporte em todo o Brasil. Com mais de uma década no mercado de gestão de riscos, a KMD atua de forma totalmente independente de seguradoras e corretoras, garantindo isenção técnica e foco absoluto no melhor resultado para seus clientes. Sediada em São Paulo, a empresa está conectada aos principais provedores de telecomunicações e rastreamento de frotas e cargas, assegurando alto padrão de qualidade e eficiência operacional em todo o Brasil e Mercosul. Mais do que fornecer serviços, a KMD atua como consultoria estratégica, desenvolvendo soluções personalizadas e construindo relações sólidas e de longo prazo.">
     <h3>Quem Somos</h3>
-    <p>
-      A KMD é especialista em gestão de riscos, proteção logística e inteligência operacional para o transporte.
-    </p>
+    <p>A KMD é especialista em gestão de riscos, proteção logística e inteligência operacional para o transporte.</p>
     <button class="btn-saiba-mais">Saiba mais</button>
   </article>
 
-  <article class="card empresa-card"
-    data-title="Nossa Missão"
-    data-full="
-Desenvolver e apresentar soluções criativas, inovadoras e inteligentes para a Gestão dos Riscos inerentes às atividades de nossos clientes.
-
-Nosso objetivo é contribuir para o sucesso das operações, superação de metas e geração de valor real para os negócios, atuando de forma estratégica e personalizada.">
-
+  <article class="card empresa-card" data-title="Nossa Missão" data-full="Desenvolver e apresentar soluções criativas, inovadoras e inteligentes para a Gestão dos Riscos inerentes às atividades de nossos clientes. Nosso objetivo é contribuir para o sucesso das operações, superação de metas e geração de valor real para os negócios, atuando de forma estratégica e personalizada.">
     <h3>Nossa Missão</h3>
-    <p>
-      Desenvolver soluções inteligentes para a gestão de riscos, agregando valor aos negócios.
-    </p>
+    <p>Desenvolver soluções inteligentes para a gestão de riscos, agregando valor aos negócios.</p>
     <button class="btn-saiba-mais">Saiba mais</button>
   </article>
 
-  <article class="card empresa-card"
-    data-title="Nossa Visão"
-    data-full="
-Ser reconhecida como referência no mercado por sua integridade, inovação, competência técnica e postura de parceria.
-
-Buscamos ser sinônimo de empresa moderna, estratégica e confiável no segmento de gestão de riscos e logística.">
-
+  <article class="card empresa-card" data-title="Nossa Visão" data-full="Ser reconhecida como referência no mercado por sua integridade, inovação, competência técnica e postura de parceria. Buscamos ser sinônimo de empresa moderna, estratégica e confiável no segmento de gestão de riscos e logística.">
     <h3>Nossa Visão</h3>
-    <p>
-      Ser referência como empresa íntegra, inovadora e parceira de negócios.
-    </p>
+    <p>Ser referência como empresa íntegra, inovadora e parceira de negócios.</p>
     <button class="btn-saiba-mais">Saiba mais</button>
   </article>
 
-  <article class="card empresa-card"
-    data-title="Nossos Valores"
-    data-full="
-Compromisso com o cliente, inovação contínua, excelência técnica e ética em todas as decisões.
-
-Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verdadeiras, sempre com foco em resultados, transparência, confidencialidade e visão estratégica de negócio.">
-
+  <article class="card empresa-card" data-title="Nossos Valores" data-full="Compromisso com o cliente, inovação contínua, excelência técnica e ética em todas as decisões. Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verdadeiras, sempre com foco em resultados, transparência, confidencialidade e visão estratégica de negócio.">
     <h3>Nossos Valores</h3>
-    <p>
-      Compromisso, inovação, ética, excelência técnica e foco em resultados.
-    </p>
+    <p>Compromisso, inovação, ética, excelência técnica e foco em resultados.</p>
     <button class="btn-saiba-mais">Saiba mais</button>
   </article>
-
 </section>
 
-
-
-<!-- MODAL -->
 <div id="empresaModal" class="modal-overlay">
   <div class="modal-card">
-
     <button class="modal-close" aria-label="Fechar">✕</button>
-
     <div class="modal-body">
       <h2 id="empresaModalTitle" class="modal-title"></h2>
       <div id="empresaModalContent" class="modal-content"></div>
     </div>
-
     <div class="modal-footer">
       <div class="nav-buttons">
         <button id="empresaPrev">← Anterior</button>
         <button id="empresaNext">Próxima →</button>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- BOTÃO DO CHAT  -->   
-    <button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
 <div class="kmd-chat" id="kmdChat" aria-hidden="true">
   <div class="kmd-chat-header">
@@ -182,12 +142,11 @@ Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verda
       <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
     </div>
   </div>
-  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a></div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
 </div>
 
 <footer class="rodape-moderno">
   <div class="rodape-container">
-    
     <div class="rodape-col branding">
       <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-rodape">
       <p class="slogan">Excelência em Gerenciamento de Riscos e Logística integrada.</p>
@@ -197,7 +156,6 @@ Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verda
         <a href="https://facebook.com/sua_pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
-    
     <div class="rodape-col">
       <h3>Acesso Rápido</h3>
       <nav class="footer-nav">
@@ -207,87 +165,60 @@ Valorizamos as pessoas, o trabalho em equipe e a construção de parcerias verda
         <a href="contato.html">Contato</a>
       </nav>
     </div>
-
     <div class="rodape-col">
       <h3>Fale Conosco</h3>
       <a href="mailto:atendimento@komando.com.br" class="contato-link">
         <i class="fas fa-envelope"></i> atendimento@komando.com.br
       </a>
       <div class="portal-wrapper">
-        <a href="http://vstrack.ddns.net/komando/" class="btn-portal-footer" target="_blank">
-          PORTAL DO CLIENTE
-        </a>
+        <a href="http://vstrack.ddns.net/komando/" class="btn-portal-footer" target="_blank">PORTAL DO CLIENTE</a>
       </div>
     </div>
-
   </div>
-
   <div class="rodape-bottom">
     <p>© 2025 Komando GR — Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script>
-  const cards = Array.from(document.querySelectorAll('.empresa-card'));
-  const modal = document.getElementById('empresaModal');
-  const modalTitle = document.getElementById('empresaModalTitle');
-  const modalContent = document.getElementById('empresaModalContent');
-  const btnClose = modal.querySelector('.modal-close');
-  const btnPrev = document.getElementById('empresaPrev');
-  const btnNext = document.getElementById('empresaNext');
+  (function() {
+    const cards = Array.from(document.querySelectorAll('.empresa-card'));
+    const modal = document.getElementById('empresaModal');
+    if (!modal) return;
 
-  let currentIndex = -1;
+    const modalTitle = document.getElementById('empresaModalTitle');
+    const modalContent = document.getElementById('empresaModalContent');
+    const btnClose = modal.querySelector('.modal-close');
+    const btnPrev = document.getElementById('empresaPrev');
+    const btnNext = document.getElementById('empresaNext');
+    let localIndex = -1;
 
-  function openModal(index) {
-    const card = cards[index];
-    currentIndex = index;
+    function openModal(index) {
+      const card = cards[index];
+      localIndex = index;
+      modalTitle.textContent = card.dataset.title;
+      modalContent.innerHTML = card.dataset.full.trim().split('\n').filter(p => p.trim()).map(p => `<p>${p.trim()}</p>`).join('');
+      btnPrev.disabled = index === 0;
+      btnNext.disabled = index === cards.length - 1;
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
 
-    modalTitle.textContent = card.dataset.title;
+    function closeModal() {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
 
-    modalContent.innerHTML = card.dataset.full
-      .trim()
-      .split('\n')
-      .filter(p => p.trim() !== '')
-      .map(p => `<p>${p.trim()}</p>`)
-      .join('');
+    cards.forEach((card, index) => {
+      const btn = card.querySelector('.btn-saiba-mais');
+      if (btn) btn.addEventListener('click', () => openModal(index));
+    });
 
-    btnPrev.disabled = index === 0;
-    btnNext.disabled = index === cards.length - 1;
-
-    modal.classList.add('show');
-    document.documentElement.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.remove('show');
-    document.documentElement.style.overflow = '';
-  }
-
-  cards.forEach((card, index) => {
-    card.querySelector('.btn-saiba-mais')
-      .addEventListener('click', () => openModal(index));
-  });
-
-  btnPrev.addEventListener('click', () => {
-    if (currentIndex > 0) openModal(currentIndex - 1);
-  });
-
-  btnNext.addEventListener('click', () => {
-    if (currentIndex < cards.length - 1) openModal(currentIndex + 1);
-  });
-
-  btnClose.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (!modal.classList.contains('show')) return;
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'ArrowLeft' && currentIndex > 0) openModal(currentIndex - 1);
-    if (e.key === 'ArrowRight' && currentIndex < cards.length - 1) openModal(currentIndex + 1);
-  });
+    btnPrev.addEventListener('click', () => { if (localIndex > 0) openModal(localIndex - 1); });
+    btnNext.addEventListener('click', () => { if (localIndex < cards.length - 1) openModal(localIndex + 1); });
+    btnClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  })();
 </script>
 
 <script src="script.js" defer></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+< lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -36,21 +36,18 @@
 <header class="top-header">
   <div class="header-superior">
 
-    <!-- Redes sociais -->
     <div class="social-icons" aria-label="Redes sociais">
       <a href="https://www.linkedin.com/company/komando/posts/?feedView=all" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://facebook.com/sua_pagina" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/komandogroficial/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://twitter.com/sua_conta" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:contato@komandogr.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:atendimento@komando.com.br" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
     </div>
 
-    <!-- Logo -->
     <div class="logo-area">
       <img src="img/Logo_Kmd_Transp.png" alt="Komando GR" class="logo-img" loading="lazy">
     </div>
 
-    <!-- Ações -->
     <div class="right-actions">
       <a href="#" class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></a>
       <a href="http://vstrack.ddns.net/komando/" class="portal-btn" target="_blank" rel="noopener noreferrer">
@@ -58,21 +55,48 @@
       </a>
     </div>
 
-  </div>
+    <!-- BOTÃO HAMBÚRGUER (SOMENTE MOBILE) -->
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-  <nav class="menu-principal" aria-label="Menu principal">
+  </div>
+</header>
+
+<!-- MENU DESKTOP (AGORA FORA DO HEADER) -->
+<nav class="menu-principal" aria-label="Menu principal">
     <a href="index.html">Início</a>
     <a href="empresa.html">A Empresa</a>
     <a href="riscos.html">Gestão de Riscos</a>
     <a href="supply.html">Supply Chain</a>
     <a href="projetos-especiais.html">Projetos</a>
-    <a href="clients.html" class="ativo">Clientes</a>
+    <a href="clients.html">Clientes</a>
     <a href="cases.html">Cases</a>
     <a href="diferenciais.html">Diferenciais</a>
     <a href="equipe.html">Equipe</a>
     <a href="contato.html">Contato</a>
-  </nav>
-</header>
+</nav>
+
+<!-- MENU MOBILE -->
+<nav id="mobileNav" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Início</a>
+    <a href="empresa.html">A Empresa</a>
+    <a href="riscos.html">Gestão de Riscos</a>
+    <a href="supply.html">Supply Chain</a>
+    <a href="projetos-especiais.html">Projetos</a>
+    <a href="clients.html">Clientes</a>
+    <a href="cases.html">Cases</a>
+    <a href="diferenciais.html">Diferenciais</a>
+    <a href="equipe.html">Equipe</a>
+    <a href="contato.html">Contato</a>
+</nav>
+
+<div id="mobileOverlay" aria-hidden="true"></div>
 
 <style>
 /* ==================================================
@@ -163,7 +187,7 @@
 
 /* HERO — página Clientes */
 .pagina-clientes .hero {
-  min-height: 420px;
+  min-height: 530px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -278,15 +302,23 @@
 </section>
 
 <!-- CHAT -->
-<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento">
-  <i class="fas fa-headset"></i>
-</button>
+<button class="kmd-chat-toggle" id="kmdChatToggle" aria-label="Central de Atendimento"><i class="fas fa-headset"></i></button>
 
-<div class="kmd-chat" id="kmdChat">
+<div class="kmd-chat" id="kmdChat" aria-hidden="true">
   <div class="kmd-chat-header">
-    <strong>Central de Atendimento</strong>
-    <button id="kmdChatClose">×</button>
+    <div class="kmd-chat-title"><i class="fas fa-headset"></i><div><strong>Central de Atendimento</strong><span class="kmd-status">Estamos online</span></div></div>
+    <button class="kmd-chat-close" id="kmdChatClose">×</button>
   </div>
+  <div class="kmd-chat-body">
+    <div class="kmd-bubble"><p><strong>Olá 👋</strong></p><p>Como podemos ajudar você hoje?</p></div>
+    <div class="kmd-actions">
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-chart-line"></i>Falar com Vendas</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-truck"></i>Suporte ao Motorista</a>
+      <a href="https://wa.me/5519981260767" target="_blank" class="kmd-action"><i class="fas fa-user-shield"></i>Suporte ao Cliente</a>
+      <a href="mailto:rh@komandogr.com" class="kmd-action"><i class="fas fa-briefcase"></i>Trabalhe Conosco</a>
+    </div>
+  </div>
+  <div class="kmd-chat-footer">Ao continuar, você concorda com nossa <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></div>
 </div>
 
 <footer class="rodape-moderno">
@@ -332,13 +364,6 @@
 </footer>
 
 <script src="script.js" defer></script>
-<script>
-  const toggle = document.getElementById('kmdChatToggle');
-  const chat = document.getElementById('kmdChat');
-  const close = document.getElementById('kmdChatClose');
-  toggle.onclick = () => chat.classList.toggle('show');
-  close.onclick = () => chat.classList.remove('show');
-</script>
 
 </body>
 </html> 
